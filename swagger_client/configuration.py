@@ -232,14 +232,14 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
             'cookieCSRF':
                 {
                     'type': 'api_key',
-                    'in': 'query',
+                    'in': 'cookie',
                     'key': 'csrftoken',
                     'value': self.get_api_key_with_prefix('csrftoken')
                 },
             'cookieSession':
                 {
                     'type': 'api_key',
-                    'in': 'query',
+                    'in': 'cookie',
                     'key': 'LEETCODE_SESSION',
                     'value': self.get_api_key_with_prefix('LEETCODE_SESSION')
                 },
