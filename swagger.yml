@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  description: This is a simple API
+  version: 1.0.0-oas3
+  title: Simple Inventory API
+  contact:
+    email: pv.safronov@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+components:
+  securitySchemes:
+    cookieSession:
+      type: apiKey
+      in: cookie
+      name: LEETCODE_SESSION
+    cookieCSRF:
+      type: apiKey
+      in: cookie
+      name: csrftoken
+  schemas:
+    Difficulty:
+      required:
+        - level
+      properties:
+        level:
+          type: integer
+    Stat:
+      required:
+        - question_id
+        - question__title
+        - question__title_slug
+        - question__hide
+        - total_acs
+        - total_submitted
+        - frontend_question_id
+        - is_new_question
+      properties:
+        question_id:
+          type: integer
+        question__article__live:
+          type: string
+        question__article__slug:
+          type: string
+        question__article__has_video_solution:
+          type: string
+        question__title:
+          type: string
+        question__title_slug:
+          type: string
+        question__hide:
+          type: boolean
+        total_acs:
+          type: integer
+        total_submitted:
+          type: integer
+        frontend_question_id:
+          type: integer
+        is_new_question:
+          type: boolean
+    StatStatusPair:
+      required:
+        - stat
+        - difficulty
+        - paid_only
+        - is_favor
+        - frequency
+        - progress
+      properties:
+        stat:
+          $ref: '#/components/schemas/Stat'
+        status:
+          type: string
+        difficulty:
+          $ref: '#/components/schemas/Difficulty'
+        paid_only:
+          type: boolean
+        is_favor:
+          type: boolean
+        frequency:
+          type: number
+        progress:
+          type: number
+    Problems:
+      required:
+        - user_name
+        - num_solved
+        - num_total
+        - ac_easy
+        - ac_medium
+        - ac_hard
+        - stat_status_pairs
+        - frequency_high
+        - frequency_mid
+        - category_slug
+      properties:
+        user_name:
+          type: string
+        num_solved:
+          type: integer
+        num_total:
+          type: integer
+        ac_easy:
+          type: integer
+        ac_medium:
+          type: integer
+        ac_hard:
+          type: integer
+        stat_status_pairs:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatStatusPair'
+        frequency_high:
+          type: integer
+        frequency_mid:
+          type: integer
+        category_slug:
+          type: string
+paths:
+  /problems/algorithms/:
+    get:
+      responses:
+        '200':
+          description: Returns problems
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problems'
+servers:
+  - url: 'https://leetcode.com/api'
+security:
+  - cookieSession: []
+    cookieCSRF: []
