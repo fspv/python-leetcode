@@ -15,6 +15,8 @@ from __future__ import absolute_import
 
 # import models into model package
 from swagger_client.models.difficulty import Difficulty
+from swagger_client.models.interpretation import Interpretation
 from swagger_client.models.problems import Problems
+from swagger_client.models.solution import Solution
 from swagger_client.models.stat import Stat
 from swagger_client.models.stat_status_pair import StatStatusPair

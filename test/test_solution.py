@@ -15,29 +15,23 @@ from __future__ import absolute_import
 import unittest
 
 import swagger_client
-from swagger_client.api.default_api import DefaultApi  # noqa: E501
+from swagger_client.models.solution import Solution  # noqa: E501
 from swagger_client.rest import ApiException
 
 
-class TestDefaultApi(unittest.TestCase):
-    """DefaultApi unit test stubs"""
+class TestSolution(unittest.TestCase):
+    """Solution unit test stubs"""
 
     def setUp(self):
-        self.api = DefaultApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_api_problems_topic_get(self):
-        """Test case for api_problems_topic_get
-
-        """
-        pass
-
-    def test_problems_problem_interpret_solution_post(self):
-        """Test case for problems_problem_interpret_solution_post
-
-        """
+    def testSolution(self):
+        """Test Solution"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = swagger_client.models.solution.Solution()  # noqa: E501
         pass
 
 

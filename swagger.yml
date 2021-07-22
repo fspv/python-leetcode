@@ -18,7 +18,38 @@ components:
       type: apiKey
       in: cookie
       name: csrftoken
+    headerCSRF:
+      type: apiKey
+      in: header
+      name: x-csrftoken
   schemas:
+    Solution:
+      required:
+        - data_input
+        - lang
+        - question_id
+        - test_mode
+        - typed_code
+      properties:
+        data_input:
+          type: string
+        lang:
+          type: string
+        question_id:
+          type: integer
+        test_mode:
+          type: boolean
+        typed_code:
+          type: string
+    Interpretation:
+      required:
+        - interpret_id
+        - test_case
+      properties:
+        interpret_id:
+          type: string
+        test_case:
+          type: string
     Difficulty:
       required:
         - level
@@ -117,17 +148,52 @@ components:
         category_slug:
           type: string
 paths:
-  /problems/algorithms/:
+  /api/problems/{topic}/:
     get:
+      parameters:
+        - in: path
+          name: topic
+          required: true
+          schema:
+            enum: ['algorithms', 'database', 'shell', 'concurrency']
       responses:
         '200':
-          description: Returns problems
+          description: Returns problems by topic
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Problems'
+  /problems/{problem}/interpret_solution/:
+    post:
+      parameters:
+        - in: path
+          name: problem
+          required: true
+          schema:
+            type: string
+            example: two-sum
+        - in: header
+          name: Referer
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: Solution to test
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Solution'
+      responses:
+        '200':
+          description: Returns problem test result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Interpretation'
+
 servers:
-  - url: 'https://leetcode.com/api'
+  - url: 'https://leetcode.com'
 security:
   - cookieSession: []
     cookieCSRF: []
+    headerCSRF: []

@@ -46,7 +46,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "https://leetcode.com/api"
+        self.host = "https://leetcode.com"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -242,6 +242,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                     'in': 'cookie',
                     'key': 'LEETCODE_SESSION',
                     'value': self.get_api_key_with_prefix('LEETCODE_SESSION')
+                },
+            'headerCSRF':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'x-csrftoken',
+                    'value': self.get_api_key_with_prefix('x-csrftoken')
                 },
         }
 
