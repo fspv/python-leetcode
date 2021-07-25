@@ -20,9 +20,18 @@ from swagger_client.api.default_api import DefaultApi
 from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
 # import models into sdk package
+from swagger_client.models.base_submission_result import BaseSubmissionResult
 from swagger_client.models.difficulty import Difficulty
+from swagger_client.models.id import Id
+from swagger_client.models.inline_response200 import InlineResponse200
 from swagger_client.models.interpretation import Interpretation
+from swagger_client.models.one_ofid import OneOfid
+from swagger_client.models.one_ofinline_response200 import OneOfinlineResponse200
 from swagger_client.models.problems import Problems
-from swagger_client.models.solution import Solution
 from swagger_client.models.stat import Stat
 from swagger_client.models.stat_status_pair import StatStatusPair
+from swagger_client.models.submission import Submission
+from swagger_client.models.submission_id import SubmissionId
+from swagger_client.models.submission_result import SubmissionResult
+from swagger_client.models.test_submission import TestSubmission
+from swagger_client.models.test_submission_result import TestSubmissionResult

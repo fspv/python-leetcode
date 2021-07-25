@@ -250,6 +250,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                     'key': 'x-csrftoken',
                     'value': self.get_api_key_with_prefix('x-csrftoken')
                 },
+            'referer':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'Referer',
+                    'value': self.get_api_key_with_prefix('Referer')
+                },
         }
 
     def to_debug_report(self):

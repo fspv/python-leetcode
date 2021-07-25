@@ -22,8 +22,164 @@ components:
       type: apiKey
       in: header
       name: x-csrftoken
+    referer:
+      type: apiKey
+      in: header
+      name: Referer
   schemas:
-    Solution:
+    BaseSubmissionResult:
+      required:
+        - elapsed_time
+        - lang
+        - memory
+        - pretty_lang
+        - run_success
+        - state
+        - status_code
+        - status_msg
+        - status_runtime
+        - submission_id
+        - task_finish_time
+      properties:
+        code_output:
+          example: ['stdout example', '']
+          type: array
+          items:
+            type: string
+        elapsed_time:
+          example: 19
+          type: integer
+        full_runtime_error:
+          example: 'SyntaxError: invalid syntax\n'
+          type: string
+        lang:
+          example: 'python'
+          type: string
+        memory:
+          example: 6996000
+          type: integer
+        memory_percentile:
+          type: number
+        pretty_lang:
+          example: 'Python'
+          type: string
+        run_success:
+          example: false
+          type: boolean
+        runtime_error:
+          example: 'Line 5: SyntaxError: invalid syntax'
+          type: string
+        runtime_percentile:
+          type: number
+        state:
+          enum: ['SUCCESS']
+          type: string
+        status_code:
+          enum: [10, 11, 15]
+          type: integer
+        status_memory:
+          example: '13.1 MB'
+          type: string
+        status_msg:
+          example: 'Runtime Error'
+          type: string
+        status_runtime:
+          example: '36 ms'
+          type: string
+        submission_id:
+          example: 'runcode_1627219627.5662382_EI7iasnhLm'
+          type: string
+        task_finish_time:
+          example: 1627219627690
+          type: integer
+        total_correct:
+          type: integer
+          example: 1
+        total_testcases:
+          type: integer
+          example: 52
+        question_id:
+          example: 1
+          type: integer
+    TestSubmissionResult:
+      allOf:
+        - $ref: "#/components/schemas/BaseSubmissionResult"
+        - type: object
+          required:
+            - code_answer
+            - code_output
+          properties:
+            code_answer:
+              example: ['[1]']
+              type: array
+              items:
+                type: string
+            correct_answer:
+              type: boolean
+            expected_status_code:
+              enum: [10, 11, 15]
+              type: integer
+            expected_lang:
+              example: 'python'
+              type: string
+            expected_run_success:
+              type: boolean
+            expected_status_runtime:
+              example: "4"
+              type: string
+            expected_memory:
+              example: 17
+              type: integer
+            expected_code_answer:
+              example: ['[0,1]']
+              type: array
+              items:
+                type: string
+            expected_code_output:
+              example: []
+              type: array
+              items:
+                type: string
+            expected_elapsed_time:
+              example: 17
+              type: integer
+            expected_task_finish_time:
+              example: 1627224209392
+              type: integer
+    SubmissionResult:
+      allOf:
+        - $ref: "#/components/schemas/BaseSubmissionResult"
+        - type: object
+          required:
+            - question_id
+            - compare_result
+            - std_output
+            - last_testcase
+            - expected_output
+            - total_correct
+            - total_testcases
+            - input_formatted
+            - input
+          properties:
+            compare_result:
+              example: "000000000000000000000000000000000000000000000000000000"
+              type: string
+            std_output:
+              type: string
+              example: "stdout example\n"
+            last_testcase:
+              type: string
+              example: "[2,7,11,15]\n9"
+            expected_output:
+              type: string
+              example: "[0,1]"
+            input_formatted:
+              type: string
+              example: "[2,7,11,15], 9"
+            input:
+              type: string
+              example: "[2,7,11,15]\n9"
+    TestSubmission:
       required:
         - data_input
         - lang
@@ -34,12 +190,39 @@ components:
         data_input:
           type: string
         lang:
+          example: 'python'
           type: string
         question_id:
+          example: 1
           type: integer
         test_mode:
+          enum: [false]  # TODO: not sure what `true` does
           type: boolean
         typed_code:
+          example: 'print(1)'
+          type: string
+    Submission:
+      required:
+        - judge_type
+        - lang
+        - question_id
+        - test_mode
+        - typed_code
+      properties:
+        judge_type:
+          enum: ['large']
+          type: string
+        lang:
+          example: 'python'
+          type: string
+        question_id:
+          example: 1
+          type: integer
+        test_mode:
+          enum: [false]  # TODO: not sure what `true` does
+          type: boolean
+        typed_code:
+          example: 'print(1)'
           type: string
     Interpretation:
       required:
@@ -50,6 +233,12 @@ components:
           type: string
         test_case:
           type: string
+    SubmissionId:
+      required:
+        - submission_id
+      properties:
+        submission_id:
+          type: integer
     Difficulty:
       required:
         - level
@@ -156,6 +345,7 @@ paths:
           required: true
           schema:
             enum: ['algorithms', 'database', 'shell', 'concurrency']
+            type: string
       responses:
         '200':
           description: Returns problems by topic
@@ -172,17 +362,12 @@ paths:
           schema:
             type: string
             example: two-sum
-        - in: header
-          name: Referer
-          schema:
-            type: string
-          required: true
       requestBody:
         description: Solution to test
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Solution'
+              $ref: '#/components/schemas/TestSubmission'
       responses:
         '200':
           description: Returns problem test result
@@ -190,6 +375,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Interpretation'
+  /submissions/detail/{id}/check/:
+    get:
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Either submission id (int) or interpretation id (string)
+          schema:
+            oneOf:
+              - type: string
+              - type: integer
+            example: two-sum
+      responses:
+        '200':
+          description: Check status of the submitted solution
+          content:
+            application/json:
+              schema:
+                oneOf:  # Have to cast manually in the code. Now way to auto-detect type
+                  - $ref: '#/components/schemas/SubmissionResult'
+                  - $ref: '#/components/schemas/TestSubmissionResult'
+  /problems/{problem}/submit/:
+    post:
+      parameters:
+        - in: path
+          name: problem
+          required: true
+          schema:
+            type: string
+            example: two-sum
+      requestBody:
+        description: Solution to test
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Submission'
+      responses:
+        '200':
+          description: Returns problem test result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubmissionId'
 
 servers:
   - url: 'https://leetcode.com'
@@ -197,3 +425,4 @@ security:
   - cookieSession: []
     cookieCSRF: []
     headerCSRF: []
+    referer: []

@@ -40,6 +40,18 @@ class TestDefaultApi(unittest.TestCase):
         """
         pass
 
+    def test_problems_problem_submit_post(self):
+        """Test case for problems_problem_submit_post
+
+        """
+        pass
+
+    def test_submissions_detail_id_check_get(self):
+        """Test case for submissions_detail_id_check_get
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
