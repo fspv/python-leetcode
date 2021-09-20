@@ -336,6 +336,80 @@ components:
           type: integer
         category_slug:
           type: string
+    GraphqlQueryVariables:
+      required:
+        - titleSlug
+      properties:
+        titleSlug:
+          type: string
+          example: two-sum
+    GraphqlQuestionDetail:
+      required:
+        - content  # Should always query for content. Otherwise swagger breaks
+      properties:
+        content:
+          type: string
+          example: '<p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>\n\n<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>\n\n<p>You can return the answer in any order.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [2,7,11,15], target = 9\n<strong>Output:</strong> [0,1]\n<strong>Output:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].\n</pre>\n\n<p><strong>Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,2,4], target = 6\n<strong>Output:</strong> [1,2]\n</pre>\n\n<p><strong>Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> nums = [3,3], target = 6\n<strong>Output:</strong> [0,1]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>\n\t<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>\n\t<li><strong>Only one valid answer exists.</strong></li>\n</ul>\n\n<p>&nbsp;</p>\n<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than&nbsp;<code>O(n<sup>2</sup>)&nbsp;</code>time complexity?'
+        stats:
+          type: string
+          example: '{\"totalAccepted\": \"5M\", \"totalSubmission\": \"10.5M\", \"totalAcceptedRaw\": 4983120, \"totalSubmissionRaw\": 10461934, \"acRate\": \"47.6%\"}'
+        codeDefinition:
+          type: string
+          example: '[{\"value\": \"cpp\", \"text\": \"C++\", \"defaultCode\": \"class Solution {\\npublic:\\n    vector<int> twoSum(vector<int>& nums, int target) {\\n        \\n    }\\n};\"}, {\"value\": \"java\", \"text\": \"Java\", \"defaultCode\": \"class Solution {\\n    public int[] twoSum(int[] nums, int target) {\\n        \\n    }\\n}\"}, {\"value\": \"python\", \"text\": \"Python\", \"defaultCode\": \"class Solution(object):\\n    def twoSum(self, nums, target):\\n        \\\"\\\"\\\"\\n        :type nums: List[int]\\n        :type target: int\\n        :rtype: List[int]\\n        \\\"\\\"\\\"\\n        \"}, {\"value\": \"python3\", \"text\": \"Python3\", \"defaultCode\": \"class Solution:\\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\\n        \"}, {\"value\": \"c\", \"text\": \"C\", \"defaultCode\": \"\\n\\n/**\\n * Note: The returned array must be malloced, assume caller calls free().\\n */\\nint* twoSum(int* nums, int numsSize, int target, int* returnSize){\\n\\n}\"}, {\"value\": \"csharp\", \"text\": \"C#\", \"defaultCode\": \"public class Solution {\\n    public int[] TwoSum(int[] nums, int target) {\\n        \\n    }\\n}\"}, {\"value\": \"javascript\", \"text\": \"JavaScript\", \"defaultCode\": \"/**\\n * @param {number[]} nums\\n * @param {number} target\\n * @return {number[]}\\n */\\nvar twoSum = function(nums, target) {\\n    \\n};\"}, {\"value\": \"ruby\", \"text\": \"Ruby\", \"defaultCode\": \"# @param {Integer[]} nums\\n# @param {Integer} target\\n# @return {Integer[]}\\ndef two_sum(nums, target)\\n    \\nend\"}, {\"value\": \"swift\", \"text\": \"Swift\", \"defaultCode\": \"class Solution {\\n    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {\\n        \\n    }\\n}\"}, {\"value\": \"golang\", \"text\": \"Go\", \"defaultCode\": \"func twoSum(nums []int, target int) []int {\\n    \\n}\"}, {\"value\": \"scala\", \"text\": \"Scala\", \"defaultCode\": \"object Solution {\\n    def twoSum(nums: Array[Int], target: Int): Array[Int] = {\\n        \\n    }\\n}\"}, {\"value\": \"kotlin\", \"text\": \"Kotlin\", \"defaultCode\": \"class Solution {\\n    fun twoSum(nums: IntArray, target: Int): IntArray {\\n        \\n    }\\n}\"}, {\"value\": \"rust\", \"text\": \"Rust\", \"defaultCode\": \"impl Solution {\\n    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {\\n        \\n    }\\n}\"}, {\"value\": \"php\", \"text\": \"PHP\", \"defaultCode\": \"class Solution {\\n\\n    /**\\n     * @param Integer[] $nums\\n     * @param Integer $target\\n     * @return Integer[]\\n     */\\n    function twoSum($nums, $target) {\\n        \\n    }\\n}\"}, {\"value\": \"typescript\", \"text\": \"TypeScript\", \"defaultCode\": \"function twoSum(nums: number[], target: number): number[] {\\n\\n};\"}, {\"value\": \"racket\", \"text\": \"Racket\", \"defaultCode\": \"(define/contract (two-sum nums target)\\n  (-> (listof exact-integer?) exact-integer? (listof exact-integer?))\\n\\n  )\"}, {\"value\": \"erlang\", \"text\": \"Erlang\", \"defaultCode\": \"-spec two_sum(Nums :: [integer()], Target :: integer()) -> [integer()].\\ntwo_sum(Nums, Target) ->\\n  .\"}, {\"value\": \"elixir\", \"text\": \"Elixir\", \"defaultCode\": \"defmodule Solution do\\n  @spec two_sum(nums :: [integer], target :: integer) :: [integer]\\n  def two_sum(nums, target) do\\n\\n  end\\nend\"}]'
+        sampleTestCase:
+          type: string
+          example: '[2,7,11,15]\n9'
+        enableRunCode:
+          type: boolean
+        metaData:
+          type: string
+          example: '{\n  \"name\": \"twoSum\",\n  \"params\": [\n    {\n      \"name\": \"nums\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"target\",\n      \"type\": \"integer\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer[]\",\n    \"size\": 2\n  },\n  \"manual\": false\n}'
+        translatedContent:
+          type: string
+    GraphqlQuestion:
+      required:
+        - question
+      properties:
+        question:
+          $ref: '#/components/schemas/GraphqlQuestionDetail'
+    GraphqlResponse:
+      required:
+        - data
+      properties:
+        data:
+          oneOf:
+            - $ref: '#/components/schemas/GraphqlQuestion'
+    GraphqlQuery:
+      required:
+        - query
+        - variables
+        - operationName
+      properties:
+        query:
+          type: string
+          example: >
+            query getQuestionDetail($titleSlug: String!) {
+              question(titleSlug: $titleSlug) {
+                content
+                stats
+                codeDefinition
+                sampleTestCase
+                enableRunCode
+                metaData
+                translatedContent
+              }
+            }
+            # isUserPremium: >
+            #   {
+            #     user {
+            #       username
+            #       isCurrentUserPremium
+            #     }
+            #   }
+        variables:
+          $ref: '#/components/schemas/GraphqlQueryVariables'
+        operationName:
+          enum: ['getQuestionDetail']
 paths:
   /api/problems/{topic}/:
     get:
@@ -418,6 +492,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SubmissionId'
+  /graphql:
+    post:
+      requestBody:
+        description: GraphQL query
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GraphqlQuery'
+      responses:
+        '200':
+          description: Returns the result of graphql query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphqlResponse'
 
 servers:
   - url: 'https://leetcode.com'

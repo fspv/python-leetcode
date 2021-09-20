@@ -105,6 +105,37 @@ configuration.api_key['Referer'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
+body = swagger_client.GraphqlQuery() # GraphqlQuery | GraphQL query (optional)
+
+try:
+    api_response = api_instance.graphql_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->graphql_post: %s\n" % e)
+
+# Configure API key authorization: cookieCSRF
+configuration = swagger_client.Configuration()
+configuration.api_key['csrftoken'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['csrftoken'] = 'Bearer'
+# Configure API key authorization: cookieSession
+configuration = swagger_client.Configuration()
+configuration.api_key['LEETCODE_SESSION'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['LEETCODE_SESSION'] = 'Bearer'
+# Configure API key authorization: headerCSRF
+configuration = swagger_client.Configuration()
+configuration.api_key['x-csrftoken'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-csrftoken'] = 'Bearer'
+# Configure API key authorization: referer
+configuration = swagger_client.Configuration()
+configuration.api_key['Referer'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Referer'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
 problem = 'problem_example' # str | 
 body = swagger_client.TestSubmission() # TestSubmission | Solution to test (optional)
 
@@ -185,6 +216,7 @@ All URIs are relative to *https://leetcode.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**api_problems_topic_get**](docs/DefaultApi.md#api_problems_topic_get) | **GET** /api/problems/{topic}/ | 
+*DefaultApi* | [**graphql_post**](docs/DefaultApi.md#graphql_post) | **POST** /graphql | 
 *DefaultApi* | [**problems_problem_interpret_solution_post**](docs/DefaultApi.md#problems_problem_interpret_solution_post) | **POST** /problems/{problem}/interpret_solution/ | 
 *DefaultApi* | [**problems_problem_submit_post**](docs/DefaultApi.md#problems_problem_submit_post) | **POST** /problems/{problem}/submit/ | 
 *DefaultApi* | [**submissions_detail_id_check_get**](docs/DefaultApi.md#submissions_detail_id_check_get) | **GET** /submissions/detail/{id}/check/ | 
@@ -193,9 +225,15 @@ Class | Method | HTTP request | Description
 
  - [BaseSubmissionResult](docs/BaseSubmissionResult.md)
  - [Difficulty](docs/Difficulty.md)
+ - [GraphqlQuery](docs/GraphqlQuery.md)
+ - [GraphqlQueryVariables](docs/GraphqlQueryVariables.md)
+ - [GraphqlQuestion](docs/GraphqlQuestion.md)
+ - [GraphqlQuestionDetail](docs/GraphqlQuestionDetail.md)
+ - [GraphqlResponse](docs/GraphqlResponse.md)
  - [Id](docs/Id.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [Interpretation](docs/Interpretation.md)
+ - [OneOfGraphqlResponseData](docs/OneOfGraphqlResponseData.md)
  - [OneOfid](docs/OneOfid.md)
  - [OneOfinlineResponse200](docs/OneOfinlineResponse200.md)
  - [Problems](docs/Problems.md)

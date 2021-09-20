@@ -16,9 +16,15 @@ from __future__ import absolute_import
 # import models into model package
 from swagger_client.models.base_submission_result import BaseSubmissionResult
 from swagger_client.models.difficulty import Difficulty
+from swagger_client.models.graphql_query import GraphqlQuery
+from swagger_client.models.graphql_query_variables import GraphqlQueryVariables
+from swagger_client.models.graphql_question import GraphqlQuestion
+from swagger_client.models.graphql_question_detail import GraphqlQuestionDetail
+from swagger_client.models.graphql_response import GraphqlResponse
 from swagger_client.models.id import Id
 from swagger_client.models.inline_response200 import InlineResponse200
 from swagger_client.models.interpretation import Interpretation
+from swagger_client.models.one_of_graphql_response_data import OneOfGraphqlResponseData
 from swagger_client.models.one_ofid import OneOfid
 from swagger_client.models.one_ofinline_response200 import OneOfinlineResponse200
 from swagger_client.models.problems import Problems

@@ -1,3 +1,4 @@
+import sys
 from time import sleep
 
 import swagger_client
@@ -16,6 +17,25 @@ configuration.debug = False
 
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
 
+graphql_request = swagger_client.GraphqlQuery(
+    query="""
+        query getQuestionDetail($titleSlug: String!) {
+          question(titleSlug: $titleSlug) {
+            content
+            stats
+            codeDefinition
+            sampleTestCase
+            enableRunCode
+            metaData
+            translatedContent
+          }
+        }
+    """,
+    variables=swagger_client.GraphqlQueryVariables(title_slug="two-sum"),
+    operation_name="getQuestionDetail",
+)
+
+print(api_instance.graphql_post(body=graphql_request))
 
 # Get stats
 api_response = api_instance.api_problems_topic_get(topic="shell")
@@ -44,6 +64,7 @@ test_submission = swagger_client.TestSubmission(
 interpretation_id = api_instance.problems_problem_interpret_solution_post(
     problem="two-sum", body=test_submission
 )
+
 
 print("Test has been queued. Result:")
 print(interpretation_id)

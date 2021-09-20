@@ -34,6 +34,12 @@ class TestDefaultApi(unittest.TestCase):
         """
         pass
 
+    def test_graphql_post(self):
+        """Test case for graphql_post
+
+        """
+        pass
+
     def test_problems_problem_interpret_solution_post(self):
         """Test case for problems_problem_interpret_solution_post
 
