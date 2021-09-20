@@ -1,11 +1,11 @@
 import sys
 from time import sleep
 
-import swagger_client
+import leetcode
 from cookies import cookies
 
 # Initialize client
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 
 # NOTE: cookies var is just a dict with `csrftoken` and `LEETCODE_SESSION`
 # fields which contain corresponding cookies from web browser
@@ -15,9 +15,9 @@ configuration.api_key["LEETCODE_SESSION"] = cookies["LEETCODE_SESSION"]
 configuration.api_key["Referer"] = "https://leetcode.com"
 configuration.debug = False
 
-api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
+api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
 
-graphql_request = swagger_client.GraphqlQuery(
+graphql_request = leetcode.GraphqlQuery(
     query="""
         query getQuestionDetail($titleSlug: String!) {
           question(titleSlug: $titleSlug) {
@@ -31,7 +31,7 @@ graphql_request = swagger_client.GraphqlQuery(
           }
         }
     """,
-    variables=swagger_client.GraphqlQueryVariables(title_slug="two-sum"),
+    variables=leetcode.GraphqlQueryVariables(title_slug="two-sum"),
     operation_name="getQuestionDetail",
 )
 
@@ -53,7 +53,7 @@ class Solution:
         return [1]
 """
 
-test_submission = swagger_client.TestSubmission(
+test_submission = leetcode.TestSubmission(
     data_input="[2,7,11,15]\n9",
     typed_code=code,
     question_id=1,
@@ -76,10 +76,10 @@ test_submission_result = api_instance.submissions_detail_id_check_get(
 )
 
 print("Got test result:")
-print(swagger_client.TestSubmissionResult(**test_submission_result))
+print(leetcode.TestSubmissionResult(**test_submission_result))
 
 # Real submission
-submission = swagger_client.Submission(
+submission = leetcode.Submission(
     judge_type="large", typed_code=code, question_id=1, test_mode=False, lang="python"
 )
 
@@ -97,7 +97,7 @@ submission_result = api_instance.submissions_detail_id_check_get(
 )
 
 print("Got submission result:")
-print(swagger_client.SubmissionResult(**submission_result))
+print(leetcode.SubmissionResult(**submission_result))
 
 
 """

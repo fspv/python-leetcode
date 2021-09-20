@@ -1,7 +1,7 @@
-diff --git a/swagger_client/api_client.py b/swagger_client/api_client.py
+diff --git a/leetcode/api_client.py b/leetcode/api_client.py
 index 850cf27..01eb57b 100644
---- a/swagger_client/api_client.py
-+++ b/swagger_client/api_client.py
+--- a/leetcode/api_client.py
++++ b/leetcode/api_client.py
 @@ -500,9 +500,14 @@ class ApiClient(object):
                      headers[auth_setting['key']] = auth_setting['value']
                  elif auth_setting['in'] == 'query':
@@ -18,10 +18,10 @@ index 850cf27..01eb57b 100644
                      )
  
      def __deserialize_file(self, response):
-diff --git a/swagger_client/configuration.py b/swagger_client/configuration.py
+diff --git a/leetcode/configuration.py b/leetcode/configuration.py
 index f845017..bc25823 100644
---- a/swagger_client/configuration.py
-+++ b/swagger_client/configuration.py
+--- a/leetcode/configuration.py
++++ b/leetcode/configuration.py
 @@ -232,14 +232,14 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
              'cookieCSRF':
                  {

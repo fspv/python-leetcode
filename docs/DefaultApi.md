@@ -1,4 +1,4 @@
-# swagger_client.DefaultApi
+# leetcode.DefaultApi
 
 All URIs are relative to *https://leetcode.com*
 
@@ -19,33 +19,33 @@ Method | HTTP request | Description
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: cookieCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['csrftoken'] = 'Bearer'
 # Configure API key authorization: cookieSession
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['LEETCODE_SESSION'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['LEETCODE_SESSION'] = 'Bearer'
 # Configure API key authorization: headerCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['x-csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-csrftoken'] = 'Bearer'
 # Configure API key authorization: referer
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['Referer'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Referer'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
+api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
 topic = 'topic_example' # str | 
 
 try:
@@ -85,34 +85,34 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: cookieCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['csrftoken'] = 'Bearer'
 # Configure API key authorization: cookieSession
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['LEETCODE_SESSION'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['LEETCODE_SESSION'] = 'Bearer'
 # Configure API key authorization: headerCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['x-csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-csrftoken'] = 'Bearer'
 # Configure API key authorization: referer
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['Referer'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Referer'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GraphqlQuery() # GraphqlQuery | GraphQL query (optional)
+api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
+body = leetcode.GraphqlQuery() # GraphqlQuery | GraphQL query (optional)
 
 try:
     api_response = api_instance.graphql_post(body=body)
@@ -151,35 +151,35 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: cookieCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['csrftoken'] = 'Bearer'
 # Configure API key authorization: cookieSession
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['LEETCODE_SESSION'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['LEETCODE_SESSION'] = 'Bearer'
 # Configure API key authorization: headerCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['x-csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-csrftoken'] = 'Bearer'
 # Configure API key authorization: referer
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['Referer'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Referer'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
+api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
 problem = 'problem_example' # str | 
-body = swagger_client.TestSubmission() # TestSubmission | Solution to test (optional)
+body = leetcode.TestSubmission() # TestSubmission | Solution to test (optional)
 
 try:
     api_response = api_instance.problems_problem_interpret_solution_post(problem, body=body)
@@ -219,35 +219,35 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: cookieCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['csrftoken'] = 'Bearer'
 # Configure API key authorization: cookieSession
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['LEETCODE_SESSION'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['LEETCODE_SESSION'] = 'Bearer'
 # Configure API key authorization: headerCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['x-csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-csrftoken'] = 'Bearer'
 # Configure API key authorization: referer
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['Referer'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Referer'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
+api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
 problem = 'problem_example' # str | 
-body = swagger_client.Submission() # Submission | Solution to test (optional)
+body = leetcode.Submission() # Submission | Solution to test (optional)
 
 try:
     api_response = api_instance.problems_problem_submit_post(problem, body=body)
@@ -287,34 +287,34 @@ Name | Type | Description  | Notes
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: cookieCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['csrftoken'] = 'Bearer'
 # Configure API key authorization: cookieSession
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['LEETCODE_SESSION'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['LEETCODE_SESSION'] = 'Bearer'
 # Configure API key authorization: headerCSRF
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['x-csrftoken'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['x-csrftoken'] = 'Bearer'
 # Configure API key authorization: referer
-configuration = swagger_client.Configuration()
+configuration = leetcode.Configuration()
 configuration.api_key['Referer'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Referer'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
-id = swagger_client.Id() # Id | Either submission id (int) or interpretation id (string)
+api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
+id = leetcode.Id() # Id | Either submission id (int) or interpretation id (string)
 
 try:
     api_response = api_instance.submissions_detail_id_check_get(id)
