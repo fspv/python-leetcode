@@ -1,9 +1,10 @@
 openapi: 3.0.0
 info:
-  description: This is a simple API
-  version: 1.0.0-oas3
-  title: Simple Inventory API
+  description: Leetcode API implementation.
+  version: 1.0.1-1
+  title: Leetcode API
   contact:
+    name: Pavel Safronov
     email: pv.safronov@gmail.com
   license:
     name: Apache 2.0
