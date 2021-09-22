@@ -16,4 +16,5 @@ _JAVA_OPTIONS="--add-opens=java.base/java.util=ALL-UNNAMED" java -jar $tmp_dir/s
 rm -rf $tmp_dir
 
 patch -p1 < fix_cookies.patch
+patch -p1 < fix_thread_pool.patch
 patch -p1 < fix_gitignore.patch

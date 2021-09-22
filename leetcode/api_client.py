@@ -10,6 +10,7 @@
 """
 from __future__ import absolute_import
 
+import atexit
 import datetime
 import json
 import mimetypes
@@ -66,6 +67,7 @@ class ApiClient(object):
         self.configuration = configuration
 
         self.pool = ThreadPool()
+        atexit.register(self._close_pool)
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -74,7 +76,7 @@ class ApiClient(object):
         # Set default User-Agent.
         self.user_agent = 'Swagger-Codegen/1.0.0/python'
 
-    def __del__(self):
+    def _close_pool(self):
         self.pool.close()
         self.pool.join()
 
