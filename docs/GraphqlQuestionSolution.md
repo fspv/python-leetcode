@@ -1,11 +1,11 @@
-# GraphqlQuery
+# GraphqlQuestionSolution
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**query** | **str** |  | 
-**variables** | [**GraphqlQueryVariables**](GraphqlQueryVariables.md) |  | 
-**operation_name** | **str** |  | [optional] 
+**id** | **str** |  | 
+**can_see_detail** | **bool** |  | 
+**typename** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

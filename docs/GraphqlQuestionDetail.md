@@ -3,13 +3,37 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | **str** |  | 
-**stats** | **str** |  | [optional] 
-**code_definition** | **str** |  | [optional] 
-**sample_test_case** | **str** |  | [optional] 
-**enable_run_code** | **bool** |  | [optional] 
-**meta_data** | **str** |  | [optional] 
+**question_id** | **str** |  | [optional] 
+**question_frontend_id** | **str** |  | [optional] 
+**bound_topic_id** | **str** |  | [optional] 
+**title** | **str** |  | [optional] 
+**content** | **str** |  | [optional] 
+**translated_title** | **str** |  | [optional] 
 **translated_content** | **str** |  | [optional] 
+**is_paid_only** | **bool** |  | [optional] 
+**difficulty** | **str** |  | [optional] 
+**likes** | **int** |  | [optional] 
+**dislikes** | **int** |  | [optional] 
+**is_liked** | **bool** |  | [optional] 
+**similar_questions** | **str** |  | [optional] 
+**contributors** | [**list[GraphqlQuestionContributor]**](GraphqlQuestionContributor.md) |  | [optional] 
+**lang_to_valid_playground** | **str** |  | [optional] 
+**topic_tags** | [**list[GraphqlQuestionTopicTag]**](GraphqlQuestionTopicTag.md) |  | [optional] 
+**company_tag_stats** | **str** |  | [optional] 
+**code_snippets** | [**list[GraphqlQuestionCodeSnippet]**](GraphqlQuestionCodeSnippet.md) |  | [optional] 
+**stats** | **str** |  | [optional] 
+**hints** | **list[str]** |  | [optional] 
+**solution** | [**GraphqlQuestionSolution**](GraphqlQuestionSolution.md) |  | [optional] 
+**status** | **str** |  | [optional] 
+**sample_test_case** | **str** |  | [optional] 
+**judger_available** | **bool** |  | [optional] 
+**judge_type** | **str** |  | [optional] 
+**mysql_schemas** | **list[str]** |  | [optional] 
+**enable_run_code** | **bool** |  | [optional] 
+**enable_test_mode** | **bool** |  | [optional] 
+**env_info** | **str** |  | [optional] 
+**meta_data** | **str** |  | [optional] 
+**code_definition** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

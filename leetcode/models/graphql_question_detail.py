@@ -28,48 +28,253 @@ class GraphqlQuestionDetail(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'question_id': 'str',
+        'question_frontend_id': 'str',
+        'bound_topic_id': 'str',
+        'title': 'str',
         'content': 'str',
+        'translated_title': 'str',
+        'translated_content': 'str',
+        'is_paid_only': 'bool',
+        'difficulty': 'str',
+        'likes': 'int',
+        'dislikes': 'int',
+        'is_liked': 'bool',
+        'similar_questions': 'str',
+        'contributors': 'list[GraphqlQuestionContributor]',
+        'lang_to_valid_playground': 'str',
+        'topic_tags': 'list[GraphqlQuestionTopicTag]',
+        'company_tag_stats': 'str',
+        'code_snippets': 'list[GraphqlQuestionCodeSnippet]',
         'stats': 'str',
-        'code_definition': 'str',
+        'hints': 'list[str]',
+        'solution': 'GraphqlQuestionSolution',
+        'status': 'str',
         'sample_test_case': 'str',
+        'judger_available': 'bool',
+        'judge_type': 'str',
+        'mysql_schemas': 'list[str]',
         'enable_run_code': 'bool',
+        'enable_test_mode': 'bool',
+        'env_info': 'str',
         'meta_data': 'str',
-        'translated_content': 'str'
+        'code_definition': 'str'
     }
 
     attribute_map = {
+        'question_id': 'questionId',
+        'question_frontend_id': 'questionFrontendId',
+        'bound_topic_id': 'boundTopicId',
+        'title': 'title',
         'content': 'content',
+        'translated_title': 'translatedTitle',
+        'translated_content': 'translatedContent',
+        'is_paid_only': 'isPaidOnly',
+        'difficulty': 'difficulty',
+        'likes': 'likes',
+        'dislikes': 'dislikes',
+        'is_liked': 'isLiked',
+        'similar_questions': 'similarQuestions',
+        'contributors': 'contributors',
+        'lang_to_valid_playground': 'langToValidPlayground',
+        'topic_tags': 'topicTags',
+        'company_tag_stats': 'companyTagStats',
+        'code_snippets': 'codeSnippets',
         'stats': 'stats',
-        'code_definition': 'codeDefinition',
+        'hints': 'hints',
+        'solution': 'solution',
+        'status': 'status',
         'sample_test_case': 'sampleTestCase',
+        'judger_available': 'judgerAvailable',
+        'judge_type': 'judgeType',
+        'mysql_schemas': 'mysqlSchemas',
         'enable_run_code': 'enableRunCode',
+        'enable_test_mode': 'enableTestMode',
+        'env_info': 'envInfo',
         'meta_data': 'metaData',
-        'translated_content': 'translatedContent'
+        'code_definition': 'codeDefinition'
     }
 
-    def __init__(self, content=None, stats=None, code_definition=None, sample_test_case=None, enable_run_code=None, meta_data=None, translated_content=None):  # noqa: E501
+    def __init__(self, question_id=None, question_frontend_id=None, bound_topic_id=None, title=None, content=None, translated_title=None, translated_content=None, is_paid_only=None, difficulty=None, likes=None, dislikes=None, is_liked=None, similar_questions=None, contributors=None, lang_to_valid_playground=None, topic_tags=None, company_tag_stats=None, code_snippets=None, stats=None, hints=None, solution=None, status=None, sample_test_case=None, judger_available=None, judge_type=None, mysql_schemas=None, enable_run_code=None, enable_test_mode=None, env_info=None, meta_data=None, code_definition=None):  # noqa: E501
         """GraphqlQuestionDetail - a model defined in Swagger"""  # noqa: E501
+        self._question_id = None
+        self._question_frontend_id = None
+        self._bound_topic_id = None
+        self._title = None
         self._content = None
-        self._stats = None
-        self._code_definition = None
-        self._sample_test_case = None
-        self._enable_run_code = None
-        self._meta_data = None
+        self._translated_title = None
         self._translated_content = None
+        self._is_paid_only = None
+        self._difficulty = None
+        self._likes = None
+        self._dislikes = None
+        self._is_liked = None
+        self._similar_questions = None
+        self._contributors = None
+        self._lang_to_valid_playground = None
+        self._topic_tags = None
+        self._company_tag_stats = None
+        self._code_snippets = None
+        self._stats = None
+        self._hints = None
+        self._solution = None
+        self._status = None
+        self._sample_test_case = None
+        self._judger_available = None
+        self._judge_type = None
+        self._mysql_schemas = None
+        self._enable_run_code = None
+        self._enable_test_mode = None
+        self._env_info = None
+        self._meta_data = None
+        self._code_definition = None
         self.discriminator = None
-        self.content = content
-        if stats is not None:
-            self.stats = stats
-        if code_definition is not None:
-            self.code_definition = code_definition
-        if sample_test_case is not None:
-            self.sample_test_case = sample_test_case
-        if enable_run_code is not None:
-            self.enable_run_code = enable_run_code
-        if meta_data is not None:
-            self.meta_data = meta_data
+        if question_id is not None:
+            self.question_id = question_id
+        if question_frontend_id is not None:
+            self.question_frontend_id = question_frontend_id
+        if bound_topic_id is not None:
+            self.bound_topic_id = bound_topic_id
+        if title is not None:
+            self.title = title
+        if content is not None:
+            self.content = content
+        if translated_title is not None:
+            self.translated_title = translated_title
         if translated_content is not None:
             self.translated_content = translated_content
+        if is_paid_only is not None:
+            self.is_paid_only = is_paid_only
+        if difficulty is not None:
+            self.difficulty = difficulty
+        if likes is not None:
+            self.likes = likes
+        if dislikes is not None:
+            self.dislikes = dislikes
+        if is_liked is not None:
+            self.is_liked = is_liked
+        if similar_questions is not None:
+            self.similar_questions = similar_questions
+        if contributors is not None:
+            self.contributors = contributors
+        if lang_to_valid_playground is not None:
+            self.lang_to_valid_playground = lang_to_valid_playground
+        if topic_tags is not None:
+            self.topic_tags = topic_tags
+        if company_tag_stats is not None:
+            self.company_tag_stats = company_tag_stats
+        if code_snippets is not None:
+            self.code_snippets = code_snippets
+        if stats is not None:
+            self.stats = stats
+        if hints is not None:
+            self.hints = hints
+        if solution is not None:
+            self.solution = solution
+        if status is not None:
+            self.status = status
+        if sample_test_case is not None:
+            self.sample_test_case = sample_test_case
+        if judger_available is not None:
+            self.judger_available = judger_available
+        if judge_type is not None:
+            self.judge_type = judge_type
+        if mysql_schemas is not None:
+            self.mysql_schemas = mysql_schemas
+        if enable_run_code is not None:
+            self.enable_run_code = enable_run_code
+        if enable_test_mode is not None:
+            self.enable_test_mode = enable_test_mode
+        if env_info is not None:
+            self.env_info = env_info
+        if meta_data is not None:
+            self.meta_data = meta_data
+        if code_definition is not None:
+            self.code_definition = code_definition
+
+    @property
+    def question_id(self):
+        """Gets the question_id of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The question_id of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._question_id
+
+    @question_id.setter
+    def question_id(self, question_id):
+        """Sets the question_id of this GraphqlQuestionDetail.
+
+
+        :param question_id: The question_id of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._question_id = question_id
+
+    @property
+    def question_frontend_id(self):
+        """Gets the question_frontend_id of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The question_frontend_id of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._question_frontend_id
+
+    @question_frontend_id.setter
+    def question_frontend_id(self, question_frontend_id):
+        """Sets the question_frontend_id of this GraphqlQuestionDetail.
+
+
+        :param question_frontend_id: The question_frontend_id of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._question_frontend_id = question_frontend_id
+
+    @property
+    def bound_topic_id(self):
+        """Gets the bound_topic_id of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The bound_topic_id of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._bound_topic_id
+
+    @bound_topic_id.setter
+    def bound_topic_id(self, bound_topic_id):
+        """Sets the bound_topic_id of this GraphqlQuestionDetail.
+
+
+        :param bound_topic_id: The bound_topic_id of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._bound_topic_id = bound_topic_id
+
+    @property
+    def title(self):
+        """Gets the title of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The title of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this GraphqlQuestionDetail.
+
+
+        :param title: The title of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
 
     @property
     def content(self):
@@ -89,10 +294,281 @@ class GraphqlQuestionDetail(object):
         :param content: The content of this GraphqlQuestionDetail.  # noqa: E501
         :type: str
         """
-        if content is None:
-            raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
 
         self._content = content
+
+    @property
+    def translated_title(self):
+        """Gets the translated_title of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The translated_title of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._translated_title
+
+    @translated_title.setter
+    def translated_title(self, translated_title):
+        """Sets the translated_title of this GraphqlQuestionDetail.
+
+
+        :param translated_title: The translated_title of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._translated_title = translated_title
+
+    @property
+    def translated_content(self):
+        """Gets the translated_content of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The translated_content of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._translated_content
+
+    @translated_content.setter
+    def translated_content(self, translated_content):
+        """Sets the translated_content of this GraphqlQuestionDetail.
+
+
+        :param translated_content: The translated_content of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._translated_content = translated_content
+
+    @property
+    def is_paid_only(self):
+        """Gets the is_paid_only of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The is_paid_only of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_paid_only
+
+    @is_paid_only.setter
+    def is_paid_only(self, is_paid_only):
+        """Sets the is_paid_only of this GraphqlQuestionDetail.
+
+
+        :param is_paid_only: The is_paid_only of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_paid_only = is_paid_only
+
+    @property
+    def difficulty(self):
+        """Gets the difficulty of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The difficulty of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._difficulty
+
+    @difficulty.setter
+    def difficulty(self, difficulty):
+        """Sets the difficulty of this GraphqlQuestionDetail.
+
+
+        :param difficulty: The difficulty of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._difficulty = difficulty
+
+    @property
+    def likes(self):
+        """Gets the likes of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The likes of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._likes
+
+    @likes.setter
+    def likes(self, likes):
+        """Sets the likes of this GraphqlQuestionDetail.
+
+
+        :param likes: The likes of this GraphqlQuestionDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._likes = likes
+
+    @property
+    def dislikes(self):
+        """Gets the dislikes of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The dislikes of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: int
+        """
+        return self._dislikes
+
+    @dislikes.setter
+    def dislikes(self, dislikes):
+        """Sets the dislikes of this GraphqlQuestionDetail.
+
+
+        :param dislikes: The dislikes of this GraphqlQuestionDetail.  # noqa: E501
+        :type: int
+        """
+
+        self._dislikes = dislikes
+
+    @property
+    def is_liked(self):
+        """Gets the is_liked of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The is_liked of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_liked
+
+    @is_liked.setter
+    def is_liked(self, is_liked):
+        """Sets the is_liked of this GraphqlQuestionDetail.
+
+
+        :param is_liked: The is_liked of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_liked = is_liked
+
+    @property
+    def similar_questions(self):
+        """Gets the similar_questions of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The similar_questions of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._similar_questions
+
+    @similar_questions.setter
+    def similar_questions(self, similar_questions):
+        """Sets the similar_questions of this GraphqlQuestionDetail.
+
+
+        :param similar_questions: The similar_questions of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._similar_questions = similar_questions
+
+    @property
+    def contributors(self):
+        """Gets the contributors of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The contributors of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: list[GraphqlQuestionContributor]
+        """
+        return self._contributors
+
+    @contributors.setter
+    def contributors(self, contributors):
+        """Sets the contributors of this GraphqlQuestionDetail.
+
+
+        :param contributors: The contributors of this GraphqlQuestionDetail.  # noqa: E501
+        :type: list[GraphqlQuestionContributor]
+        """
+
+        self._contributors = contributors
+
+    @property
+    def lang_to_valid_playground(self):
+        """Gets the lang_to_valid_playground of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The lang_to_valid_playground of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._lang_to_valid_playground
+
+    @lang_to_valid_playground.setter
+    def lang_to_valid_playground(self, lang_to_valid_playground):
+        """Sets the lang_to_valid_playground of this GraphqlQuestionDetail.
+
+
+        :param lang_to_valid_playground: The lang_to_valid_playground of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._lang_to_valid_playground = lang_to_valid_playground
+
+    @property
+    def topic_tags(self):
+        """Gets the topic_tags of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The topic_tags of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: list[GraphqlQuestionTopicTag]
+        """
+        return self._topic_tags
+
+    @topic_tags.setter
+    def topic_tags(self, topic_tags):
+        """Sets the topic_tags of this GraphqlQuestionDetail.
+
+
+        :param topic_tags: The topic_tags of this GraphqlQuestionDetail.  # noqa: E501
+        :type: list[GraphqlQuestionTopicTag]
+        """
+
+        self._topic_tags = topic_tags
+
+    @property
+    def company_tag_stats(self):
+        """Gets the company_tag_stats of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The company_tag_stats of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_tag_stats
+
+    @company_tag_stats.setter
+    def company_tag_stats(self, company_tag_stats):
+        """Sets the company_tag_stats of this GraphqlQuestionDetail.
+
+
+        :param company_tag_stats: The company_tag_stats of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._company_tag_stats = company_tag_stats
+
+    @property
+    def code_snippets(self):
+        """Gets the code_snippets of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The code_snippets of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: list[GraphqlQuestionCodeSnippet]
+        """
+        return self._code_snippets
+
+    @code_snippets.setter
+    def code_snippets(self, code_snippets):
+        """Sets the code_snippets of this GraphqlQuestionDetail.
+
+
+        :param code_snippets: The code_snippets of this GraphqlQuestionDetail.  # noqa: E501
+        :type: list[GraphqlQuestionCodeSnippet]
+        """
+
+        self._code_snippets = code_snippets
 
     @property
     def stats(self):
@@ -116,25 +592,67 @@ class GraphqlQuestionDetail(object):
         self._stats = stats
 
     @property
-    def code_definition(self):
-        """Gets the code_definition of this GraphqlQuestionDetail.  # noqa: E501
+    def hints(self):
+        """Gets the hints of this GraphqlQuestionDetail.  # noqa: E501
 
 
-        :return: The code_definition of this GraphqlQuestionDetail.  # noqa: E501
+        :return: The hints of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._hints
+
+    @hints.setter
+    def hints(self, hints):
+        """Sets the hints of this GraphqlQuestionDetail.
+
+
+        :param hints: The hints of this GraphqlQuestionDetail.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._hints = hints
+
+    @property
+    def solution(self):
+        """Gets the solution of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The solution of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: GraphqlQuestionSolution
+        """
+        return self._solution
+
+    @solution.setter
+    def solution(self, solution):
+        """Sets the solution of this GraphqlQuestionDetail.
+
+
+        :param solution: The solution of this GraphqlQuestionDetail.  # noqa: E501
+        :type: GraphqlQuestionSolution
+        """
+
+        self._solution = solution
+
+    @property
+    def status(self):
+        """Gets the status of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The status of this GraphqlQuestionDetail.  # noqa: E501
         :rtype: str
         """
-        return self._code_definition
+        return self._status
 
-    @code_definition.setter
-    def code_definition(self, code_definition):
-        """Sets the code_definition of this GraphqlQuestionDetail.
+    @status.setter
+    def status(self, status):
+        """Sets the status of this GraphqlQuestionDetail.
 
 
-        :param code_definition: The code_definition of this GraphqlQuestionDetail.  # noqa: E501
+        :param status: The status of this GraphqlQuestionDetail.  # noqa: E501
         :type: str
         """
 
-        self._code_definition = code_definition
+        self._status = status
 
     @property
     def sample_test_case(self):
@@ -158,6 +676,69 @@ class GraphqlQuestionDetail(object):
         self._sample_test_case = sample_test_case
 
     @property
+    def judger_available(self):
+        """Gets the judger_available of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The judger_available of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._judger_available
+
+    @judger_available.setter
+    def judger_available(self, judger_available):
+        """Sets the judger_available of this GraphqlQuestionDetail.
+
+
+        :param judger_available: The judger_available of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._judger_available = judger_available
+
+    @property
+    def judge_type(self):
+        """Gets the judge_type of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The judge_type of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._judge_type
+
+    @judge_type.setter
+    def judge_type(self, judge_type):
+        """Sets the judge_type of this GraphqlQuestionDetail.
+
+
+        :param judge_type: The judge_type of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._judge_type = judge_type
+
+    @property
+    def mysql_schemas(self):
+        """Gets the mysql_schemas of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The mysql_schemas of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._mysql_schemas
+
+    @mysql_schemas.setter
+    def mysql_schemas(self, mysql_schemas):
+        """Sets the mysql_schemas of this GraphqlQuestionDetail.
+
+
+        :param mysql_schemas: The mysql_schemas of this GraphqlQuestionDetail.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._mysql_schemas = mysql_schemas
+
+    @property
     def enable_run_code(self):
         """Gets the enable_run_code of this GraphqlQuestionDetail.  # noqa: E501
 
@@ -177,6 +758,48 @@ class GraphqlQuestionDetail(object):
         """
 
         self._enable_run_code = enable_run_code
+
+    @property
+    def enable_test_mode(self):
+        """Gets the enable_test_mode of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The enable_test_mode of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_test_mode
+
+    @enable_test_mode.setter
+    def enable_test_mode(self, enable_test_mode):
+        """Sets the enable_test_mode of this GraphqlQuestionDetail.
+
+
+        :param enable_test_mode: The enable_test_mode of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_test_mode = enable_test_mode
+
+    @property
+    def env_info(self):
+        """Gets the env_info of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The env_info of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._env_info
+
+    @env_info.setter
+    def env_info(self, env_info):
+        """Sets the env_info of this GraphqlQuestionDetail.
+
+
+        :param env_info: The env_info of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._env_info = env_info
 
     @property
     def meta_data(self):
@@ -200,25 +823,25 @@ class GraphqlQuestionDetail(object):
         self._meta_data = meta_data
 
     @property
-    def translated_content(self):
-        """Gets the translated_content of this GraphqlQuestionDetail.  # noqa: E501
+    def code_definition(self):
+        """Gets the code_definition of this GraphqlQuestionDetail.  # noqa: E501
 
 
-        :return: The translated_content of this GraphqlQuestionDetail.  # noqa: E501
+        :return: The code_definition of this GraphqlQuestionDetail.  # noqa: E501
         :rtype: str
         """
-        return self._translated_content
+        return self._code_definition
 
-    @translated_content.setter
-    def translated_content(self, translated_content):
-        """Sets the translated_content of this GraphqlQuestionDetail.
+    @code_definition.setter
+    def code_definition(self, code_definition):
+        """Sets the code_definition of this GraphqlQuestionDetail.
 
 
-        :param translated_content: The translated_content of this GraphqlQuestionDetail.  # noqa: E501
+        :param code_definition: The code_definition of this GraphqlQuestionDetail.  # noqa: E501
         :type: str
         """
 
-        self._translated_content = translated_content
+        self._code_definition = code_definition
 
     def to_dict(self):
         """Returns the model properties as a dict"""

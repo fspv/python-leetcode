@@ -39,7 +39,8 @@ class GraphqlQueryVariables(object):
         """GraphqlQueryVariables - a model defined in Swagger"""  # noqa: E501
         self._title_slug = None
         self.discriminator = None
-        self.title_slug = title_slug
+        if title_slug is not None:
+            self.title_slug = title_slug
 
     @property
     def title_slug(self):
@@ -59,8 +60,6 @@ class GraphqlQueryVariables(object):
         :param title_slug: The title_slug of this GraphqlQueryVariables.  # noqa: E501
         :type: str
         """
-        if title_slug is None:
-            raise ValueError("Invalid value for `title_slug`, must not be `None`")  # noqa: E501
 
         self._title_slug = title_slug
 

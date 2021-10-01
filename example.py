@@ -19,15 +19,73 @@ api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
 
 graphql_request = leetcode.GraphqlQuery(
     query="""
+{
+  user {
+    username
+    isCurrentUserPremium
+  }
+}
+    """,
+    variables=leetcode.GraphqlQueryVariables(),
+)
+
+print(api_instance.graphql_post(body=graphql_request))
+
+graphql_request = leetcode.GraphqlQuery(
+    query="""
         query getQuestionDetail($titleSlug: String!) {
           question(titleSlug: $titleSlug) {
+            questionId
+            questionFrontendId
+            boundTopicId
+            title
             content
+            translatedTitle
+            isPaidOnly
+            difficulty
+            likes
+            dislikes
+            isLiked
+            similarQuestions
+            contributors {
+              username
+              profileUrl
+              avatarUrl
+              __typename
+            }
+            langToValidPlayground
+            topicTags {
+              name
+              slug
+              translatedName
+              __typename
+            }
+            companyTagStats
+            codeSnippets {
+              lang
+              langSlug
+              code
+              __typename
+            }
             stats
             codeDefinition
+            hints
+            solution {
+              id
+              canSeeDetail
+              __typename
+            }
+            status
             sampleTestCase
             enableRunCode
             metaData
             translatedContent
+            judgerAvailable
+            judgeType
+            mysqlSchemas
+            enableTestMode
+            envInfo
+            __typename
           }
         }
     """,

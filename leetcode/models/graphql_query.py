@@ -47,7 +47,8 @@ class GraphqlQuery(object):
         self.discriminator = None
         self.query = query
         self.variables = variables
-        self.operation_name = operation_name
+        if operation_name is not None:
+            self.operation_name = operation_name
 
     @property
     def query(self):
@@ -113,8 +114,6 @@ class GraphqlQuery(object):
         :param operation_name: The operation_name of this GraphqlQuery.  # noqa: E501
         :type: str
         """
-        if operation_name is None:
-            raise ValueError("Invalid value for `operation_name`, must not be `None`")  # noqa: E501
 
         self._operation_name = operation_name
 
