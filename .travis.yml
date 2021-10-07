@@ -10,6 +10,7 @@ deploy:
   provider: pypi
   username: __token__
   skip_cleanup: true
+  skip_existing: true
   on:
     branch: main
 before_deploy:
