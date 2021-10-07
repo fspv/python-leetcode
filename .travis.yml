@@ -11,3 +11,8 @@ python:
 install: "pip install -r requirements.txt"
 # command to run tests
 script: nosetests
+deploy:
+  provider: pypi
+  username: "__token__"
+  password:
+    secure: "b0IlK4l6w4BIQXHXChUOo835n8NKblFop1qw6JHJfF9DuLfr4OsYljFhNc7HvcBUb705RTPcZG0MiRb60ZCO0CnZzIM9ZoKYzE/kULOms4HgMZcKqwKn+r67WZmO5ooIdmU62F4rHlVtuDR85zx8NdBvzRrEKG85bi4A3rT5eo6gLFHKtWLrdMB9BO306uz+eqHjMgwl/gFWe3CNIhrePe0XAyDq90TIa+lo5cVrgy0rxRcKLL4NN8HyO2gzJ7E2a+J7PEeO7Shz+LBU/WvIOB6QgWqmUFcJOX92HVVADk2TSQdxwtnhGKBKr3RevjQM+13NVBNsYj2nJzNMzmhYE4Myj+40eIAn72ANf4jMz4lOfeaNODb2Ze8Ew+ypRPa1NHhWHzw8uHem1poM5SvU8yZhc/bnhJxLFIiEQBwtTDJIk5zgqdX8bf7CP9ihmnT/t8aY/gF1rqs57vvvFM/56yMzrju8VXbbtEoU8zQr4T+bkGWLqpqVWQYiboOTJo7615tHRVCzK3TOo2AdOUTe3tKEV5t0il+Djls4YSOLZJy04yuuU+fvYoo7YzVFUhcKUtKKUWqUWIyfoBpZwWTHpwvTtNy61D2y3JZz+uPtL3xiuMuxk/pJ2Hj/deH6BRg4f1cMj1ehYwIgtnWRbcPcqYyEz3mHFGRGxakn69nnXxI="
