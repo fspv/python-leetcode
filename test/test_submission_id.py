@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.submission_id import SubmissionId  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.submission_id import SubmissionId  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestSubmissionId(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestSubmissionId(unittest.TestCase):
     def testSubmissionId(self):
         """Test SubmissionId"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.submission_id.SubmissionId()  # noqa: E501
+        # model = leetcode.models.submission_id.SubmissionId()  # noqa: E501
         pass
 
 

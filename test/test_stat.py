@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.stat import Stat  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.stat import Stat  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestStat(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestStat(unittest.TestCase):
     def testStat(self):
         """Test Stat"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.stat.Stat()  # noqa: E501
+        # model = leetcode.models.stat.Stat()  # noqa: E501
         pass
 
 

@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.stat_status_pair import StatStatusPair  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.stat_status_pair import StatStatusPair  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestStatStatusPair(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestStatStatusPair(unittest.TestCase):
     def testStatStatusPair(self):
         """Test StatStatusPair"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.stat_status_pair.StatStatusPair()  # noqa: E501
+        # model = leetcode.models.stat_status_pair.StatStatusPair()  # noqa: E501
         pass
 
 

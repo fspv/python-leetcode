@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.graphql_question_detail import GraphqlQuestionDetail  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.graphql_question_detail import GraphqlQuestionDetail  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestGraphqlQuestionDetail(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestGraphqlQuestionDetail(unittest.TestCase):
     def testGraphqlQuestionDetail(self):
         """Test GraphqlQuestionDetail"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.graphql_question_detail.GraphqlQuestionDetail()  # noqa: E501
+        # model = leetcode.models.graphql_question_detail.GraphqlQuestionDetail()  # noqa: E501
         pass
 
 

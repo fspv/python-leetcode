@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.graphql_query_variables import GraphqlQueryVariables  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.graphql_query_variables import GraphqlQueryVariables  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestGraphqlQueryVariables(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestGraphqlQueryVariables(unittest.TestCase):
     def testGraphqlQueryVariables(self):
         """Test GraphqlQueryVariables"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.graphql_query_variables.GraphqlQueryVariables()  # noqa: E501
+        # model = leetcode.models.graphql_query_variables.GraphqlQueryVariables()  # noqa: E501
         pass
 
 

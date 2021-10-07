@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.one_ofinline_response200 import OneOfinlineResponse200  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.one_ofinline_response200 import OneOfinlineResponse200  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestOneOfinlineResponse200(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestOneOfinlineResponse200(unittest.TestCase):
     def testOneOfinlineResponse200(self):
         """Test OneOfinlineResponse200"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.one_ofinline_response200.OneOfinlineResponse200()  # noqa: E501
+        # model = leetcode.models.one_ofinline_response200.OneOfinlineResponse200()  # noqa: E501
         pass
 
 

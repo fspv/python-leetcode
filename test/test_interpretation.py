@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.interpretation import Interpretation  # noqa: E501
-from swagger_client.rest import ApiException
+import leetcode
+from leetcode.models.interpretation import Interpretation  # noqa: E501
+from leetcode.rest import ApiException
 
 
 class TestInterpretation(unittest.TestCase):
@@ -31,7 +31,7 @@ class TestInterpretation(unittest.TestCase):
     def testInterpretation(self):
         """Test Interpretation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.interpretation.Interpretation()  # noqa: E501
+        # model = leetcode.models.interpretation.Interpretation()  # noqa: E501
         pass
 
 
