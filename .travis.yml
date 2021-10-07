@@ -9,10 +9,6 @@ script: nosetests
 deploy:
   provider: pypi
   username: __token__
-  skip_cleanup: true
   skip_existing: true
   on:
     branch: main
-before_deploy:
-  # set different name for pypi upload
-  - sed -i -e 's/NAME = "leetcode"/NAME = "python-leetcode"/g' setup.py
