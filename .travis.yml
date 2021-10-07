@@ -11,3 +11,6 @@ deploy:
   username: __token__
   on:
     branch: main
+before_deploy:
+  # set different name for pypi upload
+  - sed -i -e 's/NAME = "leetcode"/NAME = "pyleetcode-api"/g' setup.py
