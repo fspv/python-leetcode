@@ -1,4 +1,5 @@
-![build](https://app.travis-ci.com/prius/python-leetcode.svg?branch=main)
+![build](https://github.com/prius/python-leetcode/actions/workflows/publish-to-pypi.yml/badge.svg)
+![tests](https://github.com/prius/python-leetcode/actions/workflows/pytest.yml/badge.svg)
 ![pypi](https://badge.fury.io/py/python-leetcode.svg)
 ![pypi-downloads](https://img.shields.io/pypi/dm/python-leetcode)
 ![python-versions](https://img.shields.io/pypi/pyversions/python-leetcode)
