@@ -30,6 +30,7 @@ setup(
     name=NAME,
     version=VERSION,
     description="Leetcode API",
+    author="Pavel Safronov",
     author_email="pv.safronov@gmail.com",
     url="https://github.com/prius/python-leetcode",
     keywords=["leetcode", "faang", "interview", "api"],
@@ -38,4 +39,14 @@ setup(
     include_package_data=True,
     long_description=DESCRIPTION,
     long_description_content_type="text/markdown",
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+    ],
+    python_requires='>=3.8',
 )
