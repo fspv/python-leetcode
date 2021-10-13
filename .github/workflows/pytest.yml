@@ -1,9 +1,9 @@
 ---
-name: Test with pytest
+name: Tests
 on: push
 jobs:
   pytest:
-    name: Test with pytest
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -13,6 +13,8 @@ jobs:
           python-version: 3.9
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: Install test requirements
+        run: pip install -r test-requirements.txt
       - name: Install pytest
         run: pip install pytest
       - name: Run tests

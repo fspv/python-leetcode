@@ -1,9 +1,9 @@
 ---
-name: Publish Python distribution package to PyPI and TestPyPI
+name: PyPI - Build and publish
 on: push
 jobs:
   build-n-publish:
-    name: Build and publish Python distributions to PyPI and TestPyPI
+    name: PyPI - Build and publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
