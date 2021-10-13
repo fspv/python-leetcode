@@ -1,5 +1,6 @@
 ![build](https://app.travis-ci.com/prius/python-leetcode.svg?branch=main)
 ![pypi](https://badge.fury.io/py/python-leetcode.svg)
+![pypi-downloads](https://img.shields.io/pypi/dm/python-leetcode)
 
 # Leetcode API implementation
 
