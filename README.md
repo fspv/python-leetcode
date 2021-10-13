@@ -2,6 +2,7 @@
 ![pypi](https://badge.fury.io/py/python-leetcode.svg)
 ![pypi-downloads](https://img.shields.io/pypi/dm/python-leetcode)
 ![python-versions](https://img.shields.io/pypi/pyversions/python-leetcode)
+![license](https://img.shields.io/pypi/l/python-leetcode)
 
 # Leetcode API implementation
 
