@@ -21,7 +21,7 @@ virtualenv -p python3 leetcode
 pip3 install python-leetcode
 ```
 
-Then in python shell initialize the client
+Then in python shell initialize the client (if you're using chrome, cookies can be found here [chrome://settings/cookies/detail?site=leetcode.com](chrome://settings/cookies/detail?site=leetcode.com))
 ```python
 import leetcode
 
