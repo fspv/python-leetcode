@@ -32,6 +32,7 @@ class GraphqlQuestionDetail(object):
         'question_frontend_id': 'str',
         'bound_topic_id': 'str',
         'title': 'str',
+        'frequency': 'float',
         'content': 'str',
         'translated_title': 'str',
         'translated_content': 'str',
@@ -66,6 +67,7 @@ class GraphqlQuestionDetail(object):
         'question_frontend_id': 'questionFrontendId',
         'bound_topic_id': 'boundTopicId',
         'title': 'title',
+        'frequency': 'frequency',
         'content': 'content',
         'translated_title': 'translatedTitle',
         'translated_content': 'translatedContent',
@@ -95,12 +97,13 @@ class GraphqlQuestionDetail(object):
         'code_definition': 'codeDefinition'
     }
 
-    def __init__(self, question_id=None, question_frontend_id=None, bound_topic_id=None, title=None, content=None, translated_title=None, translated_content=None, is_paid_only=None, difficulty=None, likes=None, dislikes=None, is_liked=None, similar_questions=None, contributors=None, lang_to_valid_playground=None, topic_tags=None, company_tag_stats=None, code_snippets=None, stats=None, hints=None, solution=None, status=None, sample_test_case=None, judger_available=None, judge_type=None, mysql_schemas=None, enable_run_code=None, enable_test_mode=None, env_info=None, meta_data=None, code_definition=None):  # noqa: E501
+    def __init__(self, question_id=None, question_frontend_id=None, bound_topic_id=None, title=None, frequency=None, content=None, translated_title=None, translated_content=None, is_paid_only=None, difficulty=None, likes=None, dislikes=None, is_liked=None, similar_questions=None, contributors=None, lang_to_valid_playground=None, topic_tags=None, company_tag_stats=None, code_snippets=None, stats=None, hints=None, solution=None, status=None, sample_test_case=None, judger_available=None, judge_type=None, mysql_schemas=None, enable_run_code=None, enable_test_mode=None, env_info=None, meta_data=None, code_definition=None):  # noqa: E501
         """GraphqlQuestionDetail - a model defined in Swagger"""  # noqa: E501
         self._question_id = None
         self._question_frontend_id = None
         self._bound_topic_id = None
         self._title = None
+        self._frequency = None
         self._content = None
         self._translated_title = None
         self._translated_content = None
@@ -137,6 +140,8 @@ class GraphqlQuestionDetail(object):
             self.bound_topic_id = bound_topic_id
         if title is not None:
             self.title = title
+        if frequency is not None:
+            self.frequency = frequency
         if content is not None:
             self.content = content
         if translated_title is not None:
@@ -275,6 +280,27 @@ class GraphqlQuestionDetail(object):
         """
 
         self._title = title
+
+    @property
+    def frequency(self):
+        """Gets the frequency of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The frequency of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: float
+        """
+        return self._frequency
+
+    @frequency.setter
+    def frequency(self, frequency):
+        """Sets the frequency of this GraphqlQuestionDetail.
+
+
+        :param frequency: The frequency of this GraphqlQuestionDetail.  # noqa: E501
+        :type: float
+        """
+
+        self._frequency = frequency
 
     @property
     def content(self):

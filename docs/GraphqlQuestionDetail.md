@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **question_frontend_id** | **str** |  | [optional] 
 **bound_topic_id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
+**frequency** | **float** |  | [optional] 
 **content** | **str** |  | [optional] 
 **translated_title** | **str** |  | [optional] 
 **translated_content** | **str** |  | [optional] 
