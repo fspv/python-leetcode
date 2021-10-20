@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **code_snippets** | [**list[GraphqlQuestionCodeSnippet]**](GraphqlQuestionCodeSnippet.md) |  | [optional] 
 **stats** | **str** |  | [optional] 
 **hints** | **list[str]** |  | [optional] 
-**solution** | [**GraphqlQuestionSolution**](GraphqlQuestionSolution.md) |  | [optional] 
+**solution** | [**AnyOfGraphqlQuestionDetailSolution**](AnyOfGraphqlQuestionDetailSolution.md) |  | [optional] 
 **status** | **str** |  | [optional] 
 **sample_test_case** | **str** |  | [optional] 
 **judger_available** | **bool** |  | [optional] 

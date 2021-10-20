@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **question_id** | **int** |  | 
-**question__article__live** | **str** |  | [optional] 
+**question__article__live** | **bool** |  | [optional] 
 **question__article__slug** | **str** |  | [optional] 
-**question__article__has_video_solution** | **str** |  | [optional] 
+**question__article__has_video_solution** | **bool** |  | [optional] 
 **question__title** | **str** |  | 
 **question__title_slug** | **str** |  | 
 **question__hide** | **bool** |  | 

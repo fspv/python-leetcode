@@ -223,6 +223,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AnyOfGraphqlQuestionDetailSolution](docs/AnyOfGraphqlQuestionDetailSolution.md)
  - [BaseSubmissionResult](docs/BaseSubmissionResult.md)
  - [Difficulty](docs/Difficulty.md)
  - [GraphqlData](docs/GraphqlData.md)

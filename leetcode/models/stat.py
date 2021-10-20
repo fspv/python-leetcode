@@ -29,9 +29,9 @@ class Stat(object):
     """
     swagger_types = {
         'question_id': 'int',
-        'question__article__live': 'str',
+        'question__article__live': 'bool',
         'question__article__slug': 'str',
-        'question__article__has_video_solution': 'str',
+        'question__article__has_video_solution': 'bool',
         'question__title': 'str',
         'question__title_slug': 'str',
         'question__hide': 'bool',
@@ -113,7 +113,7 @@ class Stat(object):
 
 
         :return: The question__article__live of this Stat.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._question__article__live
 
@@ -123,7 +123,7 @@ class Stat(object):
 
 
         :param question__article__live: The question__article__live of this Stat.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._question__article__live = question__article__live
@@ -155,7 +155,7 @@ class Stat(object):
 
 
         :return: The question__article__has_video_solution of this Stat.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._question__article__has_video_solution
 
@@ -165,7 +165,7 @@ class Stat(object):
 
 
         :param question__article__has_video_solution: The question__article__has_video_solution of this Stat.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._question__article__has_video_solution = question__article__has_video_solution
