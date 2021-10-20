@@ -20,6 +20,7 @@ from leetcode.api.default_api import DefaultApi
 from leetcode.api_client import ApiClient
 from leetcode.configuration import Configuration
 # import models into sdk package
+from leetcode.models.any_of_graphql_question_detail_solution import AnyOfGraphqlQuestionDetailSolution
 from leetcode.models.base_submission_result import BaseSubmissionResult
 from leetcode.models.difficulty import Difficulty
 from leetcode.models.graphql_data import GraphqlData

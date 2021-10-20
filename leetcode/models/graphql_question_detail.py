@@ -49,7 +49,7 @@ class GraphqlQuestionDetail(object):
         'code_snippets': 'list[GraphqlQuestionCodeSnippet]',
         'stats': 'str',
         'hints': 'list[str]',
-        'solution': 'GraphqlQuestionSolution',
+        'solution': 'AnyOfGraphqlQuestionDetailSolution',
         'status': 'str',
         'sample_test_case': 'str',
         'judger_available': 'bool',
@@ -644,7 +644,7 @@ class GraphqlQuestionDetail(object):
 
 
         :return: The solution of this GraphqlQuestionDetail.  # noqa: E501
-        :rtype: GraphqlQuestionSolution
+        :rtype: AnyOfGraphqlQuestionDetailSolution
         """
         return self._solution
 
@@ -654,7 +654,7 @@ class GraphqlQuestionDetail(object):
 
 
         :param solution: The solution of this GraphqlQuestionDetail.  # noqa: E501
-        :type: GraphqlQuestionSolution
+        :type: AnyOfGraphqlQuestionDetailSolution
         """
 
         self._solution = solution
