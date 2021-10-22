@@ -17,5 +17,9 @@ jobs:
         run: pip install -r test-requirements.txt
       - name: Install pytest
         run: pip install pytest
+      - name: pip freeze (for debug purposes)
+        run: pip freeze
       - name: Run tests
-        run: pytest
+        run: pytest -vvvv -s
+        env:
+          LEETCODE_SESSION_ID: ${{ secrets.LEETCODE_SESSION }}
