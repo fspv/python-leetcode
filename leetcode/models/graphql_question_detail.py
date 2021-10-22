@@ -33,6 +33,7 @@ class GraphqlQuestionDetail(object):
         'bound_topic_id': 'str',
         'title': 'str',
         'frequency': 'float',
+        'freq_bar': 'float',
         'content': 'str',
         'translated_title': 'str',
         'translated_content': 'str',
@@ -41,6 +42,7 @@ class GraphqlQuestionDetail(object):
         'likes': 'int',
         'dislikes': 'int',
         'is_liked': 'bool',
+        'is_favor': 'bool',
         'similar_questions': 'str',
         'contributors': 'list[GraphqlQuestionContributor]',
         'lang_to_valid_playground': 'str',
@@ -48,8 +50,11 @@ class GraphqlQuestionDetail(object):
         'company_tag_stats': 'str',
         'code_snippets': 'list[GraphqlQuestionCodeSnippet]',
         'stats': 'str',
+        'ac_rate': 'float',
         'hints': 'list[str]',
         'solution': 'AnyOfGraphqlQuestionDetailSolution',
+        'has_solution': 'bool',
+        'has_video_solution': 'bool',
         'status': 'str',
         'sample_test_case': 'str',
         'judger_available': 'bool',
@@ -68,6 +73,7 @@ class GraphqlQuestionDetail(object):
         'bound_topic_id': 'boundTopicId',
         'title': 'title',
         'frequency': 'frequency',
+        'freq_bar': 'freqBar',
         'content': 'content',
         'translated_title': 'translatedTitle',
         'translated_content': 'translatedContent',
@@ -76,6 +82,7 @@ class GraphqlQuestionDetail(object):
         'likes': 'likes',
         'dislikes': 'dislikes',
         'is_liked': 'isLiked',
+        'is_favor': 'isFavor',
         'similar_questions': 'similarQuestions',
         'contributors': 'contributors',
         'lang_to_valid_playground': 'langToValidPlayground',
@@ -83,8 +90,11 @@ class GraphqlQuestionDetail(object):
         'company_tag_stats': 'companyTagStats',
         'code_snippets': 'codeSnippets',
         'stats': 'stats',
+        'ac_rate': 'acRate',
         'hints': 'hints',
         'solution': 'solution',
+        'has_solution': 'hasSolution',
+        'has_video_solution': 'hasVideoSolution',
         'status': 'status',
         'sample_test_case': 'sampleTestCase',
         'judger_available': 'judgerAvailable',
@@ -97,13 +107,14 @@ class GraphqlQuestionDetail(object):
         'code_definition': 'codeDefinition'
     }
 
-    def __init__(self, question_id=None, question_frontend_id=None, bound_topic_id=None, title=None, frequency=None, content=None, translated_title=None, translated_content=None, is_paid_only=None, difficulty=None, likes=None, dislikes=None, is_liked=None, similar_questions=None, contributors=None, lang_to_valid_playground=None, topic_tags=None, company_tag_stats=None, code_snippets=None, stats=None, hints=None, solution=None, status=None, sample_test_case=None, judger_available=None, judge_type=None, mysql_schemas=None, enable_run_code=None, enable_test_mode=None, env_info=None, meta_data=None, code_definition=None):  # noqa: E501
+    def __init__(self, question_id=None, question_frontend_id=None, bound_topic_id=None, title=None, frequency=None, freq_bar=None, content=None, translated_title=None, translated_content=None, is_paid_only=None, difficulty=None, likes=None, dislikes=None, is_liked=None, is_favor=None, similar_questions=None, contributors=None, lang_to_valid_playground=None, topic_tags=None, company_tag_stats=None, code_snippets=None, stats=None, ac_rate=None, hints=None, solution=None, has_solution=None, has_video_solution=None, status=None, sample_test_case=None, judger_available=None, judge_type=None, mysql_schemas=None, enable_run_code=None, enable_test_mode=None, env_info=None, meta_data=None, code_definition=None):  # noqa: E501
         """GraphqlQuestionDetail - a model defined in Swagger"""  # noqa: E501
         self._question_id = None
         self._question_frontend_id = None
         self._bound_topic_id = None
         self._title = None
         self._frequency = None
+        self._freq_bar = None
         self._content = None
         self._translated_title = None
         self._translated_content = None
@@ -112,6 +123,7 @@ class GraphqlQuestionDetail(object):
         self._likes = None
         self._dislikes = None
         self._is_liked = None
+        self._is_favor = None
         self._similar_questions = None
         self._contributors = None
         self._lang_to_valid_playground = None
@@ -119,8 +131,11 @@ class GraphqlQuestionDetail(object):
         self._company_tag_stats = None
         self._code_snippets = None
         self._stats = None
+        self._ac_rate = None
         self._hints = None
         self._solution = None
+        self._has_solution = None
+        self._has_video_solution = None
         self._status = None
         self._sample_test_case = None
         self._judger_available = None
@@ -142,6 +157,8 @@ class GraphqlQuestionDetail(object):
             self.title = title
         if frequency is not None:
             self.frequency = frequency
+        if freq_bar is not None:
+            self.freq_bar = freq_bar
         if content is not None:
             self.content = content
         if translated_title is not None:
@@ -158,6 +175,8 @@ class GraphqlQuestionDetail(object):
             self.dislikes = dislikes
         if is_liked is not None:
             self.is_liked = is_liked
+        if is_favor is not None:
+            self.is_favor = is_favor
         if similar_questions is not None:
             self.similar_questions = similar_questions
         if contributors is not None:
@@ -172,10 +191,16 @@ class GraphqlQuestionDetail(object):
             self.code_snippets = code_snippets
         if stats is not None:
             self.stats = stats
+        if ac_rate is not None:
+            self.ac_rate = ac_rate
         if hints is not None:
             self.hints = hints
         if solution is not None:
             self.solution = solution
+        if has_solution is not None:
+            self.has_solution = has_solution
+        if has_video_solution is not None:
+            self.has_video_solution = has_video_solution
         if status is not None:
             self.status = status
         if sample_test_case is not None:
@@ -301,6 +326,27 @@ class GraphqlQuestionDetail(object):
         """
 
         self._frequency = frequency
+
+    @property
+    def freq_bar(self):
+        """Gets the freq_bar of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The freq_bar of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: float
+        """
+        return self._freq_bar
+
+    @freq_bar.setter
+    def freq_bar(self, freq_bar):
+        """Sets the freq_bar of this GraphqlQuestionDetail.
+
+
+        :param freq_bar: The freq_bar of this GraphqlQuestionDetail.  # noqa: E501
+        :type: float
+        """
+
+        self._freq_bar = freq_bar
 
     @property
     def content(self):
@@ -471,6 +517,27 @@ class GraphqlQuestionDetail(object):
         self._is_liked = is_liked
 
     @property
+    def is_favor(self):
+        """Gets the is_favor of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The is_favor of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_favor
+
+    @is_favor.setter
+    def is_favor(self, is_favor):
+        """Sets the is_favor of this GraphqlQuestionDetail.
+
+
+        :param is_favor: The is_favor of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_favor = is_favor
+
+    @property
     def similar_questions(self):
         """Gets the similar_questions of this GraphqlQuestionDetail.  # noqa: E501
 
@@ -618,6 +685,27 @@ class GraphqlQuestionDetail(object):
         self._stats = stats
 
     @property
+    def ac_rate(self):
+        """Gets the ac_rate of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The ac_rate of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: float
+        """
+        return self._ac_rate
+
+    @ac_rate.setter
+    def ac_rate(self, ac_rate):
+        """Sets the ac_rate of this GraphqlQuestionDetail.
+
+
+        :param ac_rate: The ac_rate of this GraphqlQuestionDetail.  # noqa: E501
+        :type: float
+        """
+
+        self._ac_rate = ac_rate
+
+    @property
     def hints(self):
         """Gets the hints of this GraphqlQuestionDetail.  # noqa: E501
 
@@ -658,6 +746,48 @@ class GraphqlQuestionDetail(object):
         """
 
         self._solution = solution
+
+    @property
+    def has_solution(self):
+        """Gets the has_solution of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The has_solution of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_solution
+
+    @has_solution.setter
+    def has_solution(self, has_solution):
+        """Sets the has_solution of this GraphqlQuestionDetail.
+
+
+        :param has_solution: The has_solution of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_solution = has_solution
+
+    @property
+    def has_video_solution(self):
+        """Gets the has_video_solution of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The has_video_solution of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_video_solution
+
+    @has_video_solution.setter
+    def has_video_solution(self, has_video_solution):
+        """Sets the has_video_solution of this GraphqlQuestionDetail.
+
+
+        :param has_video_solution: The has_video_solution of this GraphqlQuestionDetail.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_video_solution = has_video_solution
 
     @property
     def status(self):
