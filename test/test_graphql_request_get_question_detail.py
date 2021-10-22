@@ -14,6 +14,8 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                     questionFrontendId
                     boundTopicId
                     title
+                    frequency
+                    freqBar
                     content
                     translatedTitle
                     isPaidOnly
@@ -21,6 +23,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                     likes
                     dislikes
                     isLiked
+                    isFavor
                     similarQuestions
                     contributors {
                       username
@@ -43,6 +46,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                       __typename
                     }
                     stats
+                    acRate
                     codeDefinition
                     hints
                     solution {
@@ -50,6 +54,8 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                       canSeeDetail
                       __typename
                     }
+                    hasSolution
+                    hasVideoSolution
                     status
                     sampleTestCase
                     enableRunCode
@@ -83,6 +89,8 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         assert question.question_frontend_id == "1"
         assert question.bound_topic_id is None
         assert question.title == "Two Sum"
+        assert question.frequency == 0.0
+        assert question.freq_bar > 0
         assert len(question.content) > 10
         assert question.translated_title is None
         assert question.is_paid_only is False
@@ -90,6 +98,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         assert question.likes > 0
         assert question.dislikes > 0
         assert question.is_liked is None
+        assert question.is_favor in (True, False)
         assert json.loads(question.similar_questions)[0]["difficulty"] in (
             "Easy",
             "Medium",
@@ -126,6 +135,8 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         assert int(stats["totalAcceptedRaw"]) > 0
         assert int(stats["totalSubmissionRaw"]) > 0
 
+        assert question.ac_rate > 0
+
         code_definition = json.loads(question.code_definition)[0]
 
         assert len(code_definition["value"]) > 0
@@ -143,6 +154,9 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         assert solution["__typename"] == "ArticleNode"
         assert solution["canSeeDetail"] in (True, False)
         assert int(solution["id"]) > 0
+
+        assert question.has_solution in (True, False)
+        assert question.has_video_solution in (True, False)
 
         assert question.status in ("ac", "not_started", "tried")
 
