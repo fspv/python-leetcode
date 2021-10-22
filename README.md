@@ -27,8 +27,12 @@ Then in python shell initialize the client (if you're using chrome, cookies can 
 import leetcode
 
 # Get the next two values from your browser cookies
-csrf_token = "xxx"
 leetcode_session = "yyy"
+csrf_token = "xxx"
+
+# Experimental: Or CSRF token can be obtained automatically
+import leetcode.auth
+csrf_token = leetcode.auth.get_csrf_cookie(leetcode_session)
 
 configuration = leetcode.Configuration()
 
