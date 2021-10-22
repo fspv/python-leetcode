@@ -15,7 +15,9 @@ from __future__ import absolute_import
 import unittest
 
 import leetcode
-from leetcode.models.one_ofinline_response200 import OneOfinlineResponse200  # noqa: E501
+from leetcode.models.one_ofinline_response200 import (  # noqa: E501
+    OneOfinlineResponse200,
+)
 from leetcode.rest import ApiException
 
 
@@ -35,5 +37,5 @@ class TestOneOfinlineResponse200(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

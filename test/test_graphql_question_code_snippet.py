@@ -15,7 +15,9 @@ from __future__ import absolute_import
 import unittest
 
 import leetcode
-from leetcode.models.graphql_question_code_snippet import GraphqlQuestionCodeSnippet  # noqa: E501
+from leetcode.models.graphql_question_code_snippet import (  # noqa: E501
+    GraphqlQuestionCodeSnippet,
+)
 from leetcode.rest import ApiException
 
 
@@ -35,5 +37,5 @@ class TestGraphqlQuestionCodeSnippet(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

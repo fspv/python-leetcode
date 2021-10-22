@@ -15,7 +15,9 @@ from __future__ import absolute_import
 import unittest
 
 import leetcode
-from leetcode.models.graphql_question_topic_tag import GraphqlQuestionTopicTag  # noqa: E501
+from leetcode.models.graphql_question_topic_tag import (  # noqa: E501
+    GraphqlQuestionTopicTag,
+)
 from leetcode.rest import ApiException
 
 
@@ -35,5 +37,5 @@ class TestGraphqlQuestionTopicTag(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

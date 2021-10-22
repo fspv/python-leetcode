@@ -1,8 +1,9 @@
 import sys
 from time import sleep
 
-import leetcode
 from cookies import cookies
+
+import leetcode
 
 # Initialize client
 configuration = leetcode.Configuration()
