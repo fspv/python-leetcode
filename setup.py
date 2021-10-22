@@ -12,7 +12,7 @@
 from setuptools import find_packages, setup  # noqa: H301
 
 NAME = "python-leetcode"
-VERSION = "1.0.9"
+VERSION = "1.0.10"
 
 with open("README.md") as readme:
     DESCRIPTION = readme.read()
