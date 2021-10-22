@@ -12,7 +12,7 @@
 from setuptools import find_packages, setup  # noqa: H301
 
 NAME = "python-leetcode"
-VERSION = "1.0.8"
+VERSION = "1.0.9"
 
 with open("README.md") as readme:
     DESCRIPTION = readme.read()
@@ -24,7 +24,7 @@ with open("README.md") as readme:
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "requests"]
 
 setup(
     name=NAME,
@@ -48,5 +48,5 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
     ],
-    python_requires='>=3.8',
+    python_requires=">=3.8",
 )
