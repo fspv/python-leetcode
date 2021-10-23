@@ -1,12 +1,15 @@
 import json
 import test.base
 
-import leetcode
+from leetcode.models.graphql_query import GraphqlQuery
+from leetcode.models.graphql_query_variables import GraphqlQueryVariables
+from leetcode.models.graphql_question_code_snippet import GraphqlQuestionCodeSnippet
+from leetcode.models.graphql_question_topic_tag import GraphqlQuestionTopicTag
 
 
 class TestGraphqlGetQuestionDetail(test.base.BaseTest):
     def test_request(self) -> None:
-        graphql_request = leetcode.GraphqlQuery(
+        graphql_request = GraphqlQuery(
             query="""
                 query getQuestionDetail($titleSlug: String!) {
                   question(titleSlug: $titleSlug) {
@@ -70,7 +73,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                   }
                 }
             """,
-            variables=leetcode.GraphqlQueryVariables(title_slug="two-sum"),
+            variables=GraphqlQueryVariables(title_slug="two-sum"),
             operation_name="getQuestionDetail",
         )
 
@@ -107,7 +110,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         assert len(question.contributors) == 0
         assert "python" in list(json.loads(question.lang_to_valid_playground).keys())
         topic_tag = question.topic_tags[0]
-        assert isinstance(topic_tag, leetcode.GraphqlQuestionTopicTag)
+        assert isinstance(topic_tag, GraphqlQuestionTopicTag)
         assert len(topic_tag.name) > 0
         assert len(topic_tag.slug) > 0
         assert question.topic_tags[0].translated_name is None
@@ -122,7 +125,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
 
         code_snippet = question.code_snippets[0]
 
-        assert isinstance(code_snippet, leetcode.GraphqlQuestionCodeSnippet)
+        assert isinstance(code_snippet, GraphqlQuestionCodeSnippet)
         assert len(code_snippet.code) > 0
         assert len(code_snippet.lang) > 0
         assert len(code_snippet.lang_slug) > 0
@@ -148,7 +151,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         solution = question.solution
 
         # FIXME: this check doesn't work with swagger generated code
-        # assert isinstance(solution, leetcode.GraphqlQuestionSolution)
+        # assert isinstance(solution, GraphqlQuestionSolution)
 
         # FIXME: swagger generates the code which returns dict
         assert solution["__typename"] == "ArticleNode"

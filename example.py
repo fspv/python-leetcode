@@ -1,18 +1,22 @@
+import os
 import sys
 from time import sleep
 
-from cookies import cookies
-
 import leetcode
+import leetcode.auth
 
 # Initialize client
 configuration = leetcode.Configuration()
 
 # NOTE: cookies var is just a dict with `csrftoken` and `LEETCODE_SESSION`
 # fields which contain corresponding cookies from web browser
-configuration.api_key["x-csrftoken"] = cookies["csrftoken"]
-configuration.api_key["csrftoken"] = cookies["csrftoken"]
-configuration.api_key["LEETCODE_SESSION"] = cookies["LEETCODE_SESSION"]
+leetcode_session = os.environ["LEETCODE_SESSION_ID"]
+
+csrf_token = leetcode.auth.get_csrf_cookie(leetcode_session)
+
+configuration.api_key["x-csrftoken"] = csrf_token
+configuration.api_key["csrftoken"] = csrf_token
+configuration.api_key["LEETCODE_SESSION"] = leetcode_session
 configuration.api_key["Referer"] = "https://leetcode.com"
 configuration.debug = False
 
