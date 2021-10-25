@@ -1,11 +1,13 @@
-# GraphqlQuery
+# GraphqlQueryProblemsetQuestionListVariablesFilterInput
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**query** | **str** |  | 
-**variables** | [**AnyOfGraphqlQueryVariables**](AnyOfGraphqlQueryVariables.md) |  | 
-**operation_name** | **str** |  | [optional] 
+**tags** | **list[str]** |  | [optional] 
+**difficulty** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**list_id** | **str** |  | [optional] 
+**premium_only** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

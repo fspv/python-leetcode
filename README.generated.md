@@ -223,11 +223,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AnyOfGraphqlQueryVariables](docs/AnyOfGraphqlQueryVariables.md)
  - [AnyOfGraphqlQuestionDetailSolution](docs/AnyOfGraphqlQuestionDetailSolution.md)
  - [BaseSubmissionResult](docs/BaseSubmissionResult.md)
  - [Difficulty](docs/Difficulty.md)
  - [GraphqlData](docs/GraphqlData.md)
+ - [GraphqlProblemsetQuestionList](docs/GraphqlProblemsetQuestionList.md)
  - [GraphqlQuery](docs/GraphqlQuery.md)
+ - [GraphqlQueryGetQuestionDetailVariables](docs/GraphqlQueryGetQuestionDetailVariables.md)
+ - [GraphqlQueryProblemsetQuestionListVariables](docs/GraphqlQueryProblemsetQuestionListVariables.md)
+ - [GraphqlQueryProblemsetQuestionListVariablesFilterInput](docs/GraphqlQueryProblemsetQuestionListVariablesFilterInput.md)
  - [GraphqlQueryVariables](docs/GraphqlQueryVariables.md)
  - [GraphqlQuestionCodeSnippet](docs/GraphqlQuestionCodeSnippet.md)
  - [GraphqlQuestionContributor](docs/GraphqlQuestionContributor.md)

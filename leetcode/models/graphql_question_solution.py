@@ -38,7 +38,9 @@ class GraphqlQuestionSolution(object):
         "typename": "__typename",
     }
 
-    def __init__(self, id=None, can_see_detail=None, typename=None) -> None:  # noqa: E501
+    def __init__(
+        self, id=None, can_see_detail=None, typename=None
+    ) -> None:  # noqa: E501
         """GraphqlQuestionSolution - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._can_see_detail = None

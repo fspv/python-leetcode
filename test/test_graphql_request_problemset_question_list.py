@@ -2,8 +2,11 @@ import json
 import test.base
 
 from leetcode.models.graphql_query import GraphqlQuery
-from leetcode.models.graphql_query_get_question_detail_variables import (
-    GraphqlQueryGetQuestionDetailVariables,
+from leetcode.models.graphql_query_problemset_question_list_variables import (
+    GraphqlQueryProblemsetQuestionListVariables,
+)
+from leetcode.models.graphql_query_problemset_question_list_variables_filter_input import (
+    GraphqlQueryProblemsetQuestionListVariablesFilterInput,
 )
 from leetcode.models.graphql_question_code_snippet import GraphqlQuestionCodeSnippet
 from leetcode.models.graphql_question_topic_tag import GraphqlQuestionTopicTag
@@ -13,8 +16,15 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
     def test_request(self) -> None:
         graphql_request = GraphqlQuery(
             query="""
-                query getQuestionDetail($titleSlug: String!) {
-                  question(titleSlug: $titleSlug) {
+            query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
+              problemsetQuestionList: questionList(
+                categorySlug: $categorySlug
+                limit: $limit
+                skip: $skip
+                filters: $filters
+              ) {
+                total: totalNum
+                questions: data {
                     questionId
                     questionFrontendId
                     boundTopicId
@@ -72,47 +82,61 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                     enableTestMode
                     envInfo
                     __typename
-                  }
                 }
+              }
+            }
             """,
-            variables=GraphqlQueryGetQuestionDetailVariables(title_slug="two-sum"),
-            operation_name="getQuestionDetail",
+            variables=GraphqlQueryProblemsetQuestionListVariables(
+                category_slug="algorithms",
+                limit=1,
+                skip=2,
+                filters=GraphqlQueryProblemsetQuestionListVariablesFilterInput(
+                    tags=["array"],
+                    difficulty="MEDIUM",
+                    status="NOT_STARTED",
+                    list_id="7p5x763",  # Top Amazon Questions
+                    premium_only=False,
+                ),
+            ),
+            operation_name="problemsetQuestionList",
         )
 
         response = self._api_instance.graphql_post(body=graphql_request)
 
         data = response.data
 
+        question = data.question
+
+        assert question is None
+
         assert data
 
-        problemset_question_list = data.problemset_question_list
+        assert data.problemset_question_list.total > 0
 
-        assert problemset_question_list is None
-
-        question = data.question
+        question_list = data.problemset_question_list.questions
         user = data.user
+
+        question = question_list[0]
 
         assert user is None
 
-        assert question.question_id == "1"
-        assert question.question_frontend_id == "1"
+        assert question.question_id is not None
+        assert question.question_frontend_id is not None
         assert question.bound_topic_id is None
-        assert question.title == "Two Sum"
+        assert question.title is not None
         assert question.frequency == 0.0
         assert question.freq_bar > 0
         assert len(question.content) > 10
         assert question.translated_title is None
-        assert question.is_paid_only is False
-        assert question.difficulty == "Easy"
+        assert question.is_paid_only in (True, False)
+        assert question.difficulty == "Medium"
         assert question.likes > 0
         assert question.dislikes > 0
         assert question.is_liked is None
         assert question.is_favor in (True, False)
-        assert json.loads(question.similar_questions)[0]["difficulty"] in (
-            "Easy",
-            "Medium",
-            "Hard",
-        )
+
+        json.loads(question.similar_questions)
+
         assert len(question.contributors) == 0
         assert "python" in list(json.loads(question.lang_to_valid_playground).keys())
         topic_tag = question.topic_tags[0]
@@ -154,20 +178,12 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
 
         assert [len(hint) > 0 for hint in question.hints]
 
-        solution = question.solution
-
-        # FIXME: this check doesn't work with swagger generated code
-        # assert isinstance(solution, GraphqlQuestionSolution)
-
-        # FIXME: swagger generates the code which returns dict
-        assert solution["__typename"] == "ArticleNode"
-        assert solution["canSeeDetail"] in (True, False)
-        assert int(solution["id"]) > 0
+        question.solution
 
         assert question.has_solution in (True, False)
         assert question.has_video_solution in (True, False)
 
-        assert question.status in ("ac", "not_started", "tried")
+        assert question.status in ("ac", "not_started", "tried", None)
 
         assert len(question.sample_test_case) > 0
 
@@ -175,12 +191,10 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
 
         meta_data = json.loads(question.meta_data)
 
-        assert meta_data["name"] == "twoSum"
+        assert meta_data["name"] is not None
         assert meta_data["params"][0]["name"]
         assert meta_data["params"][0]["type"]
         assert meta_data["return"]["type"]
-        assert meta_data["return"]["size"]
-        assert meta_data["manual"] in (True, False)
 
         assert question.translated_content is None
 

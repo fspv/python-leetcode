@@ -15,14 +15,14 @@ from __future__ import absolute_import, annotations
 import unittest
 
 import leetcode
-from leetcode.models.graphql_question_topic_tag import (  # noqa: E501
-    GraphqlQuestionTopicTag,
+from leetcode.models.graphql_query_get_question_detail_variables import (  # noqa: E501
+    GraphqlQueryGetQuestionDetailVariables,
 )
 from leetcode.rest import ApiException
 
 
-class TestGraphqlQuestionTopicTag(unittest.TestCase):
-    """GraphqlQuestionTopicTag unit test stubs"""
+class TestGraphqlQueryGetQuestionDetailVariables(unittest.TestCase):
+    """GraphqlQueryGetQuestionDetailVariables unit test stubs"""
 
     def setUp(self) -> None:
         pass
@@ -30,10 +30,10 @@ class TestGraphqlQuestionTopicTag(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def testGraphqlQuestionTopicTag(self) -> None:
-        """Test GraphqlQuestionTopicTag"""
+    def testGraphqlQueryGetQuestionDetailVariables(self) -> None:
+        """Test GraphqlQueryGetQuestionDetailVariables"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = leetcode.models.graphql_question_topic_tag.GraphqlQuestionTopicTag()  # noqa: E501
+        # model = leetcode.models.graphql_query_get_question_detail_variables.GraphqlQueryGetQuestionDetailVariables()  # noqa: E501
         pass
 
 
