@@ -1,7 +1,7 @@
 import json
 import test.base
 
-import leetcode
+import leetcode.models.graphql_query_variables
 
 
 class TestGraphqlGetUser(test.base.BaseTest):
@@ -15,7 +15,7 @@ class TestGraphqlGetUser(test.base.BaseTest):
                   }
                 }
             """,
-            variables=leetcode.GraphqlQueryVariables(),
+            variables=leetcode.models.graphql_query_variables.GraphqlQueryVariables(),
             operation_name="",
         )
 

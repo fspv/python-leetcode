@@ -30,19 +30,32 @@ class GraphqlData(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {"question": "GraphqlQuestionDetail", "user": "GraphqlUser"}
+    swagger_types = {
+        "question": "GraphqlQuestionDetail",
+        "user": "GraphqlUser",
+        "problemset_question_list": "GraphqlProblemsetQuestionList",
+    }
 
-    attribute_map = {"question": "question", "user": "user"}
+    attribute_map = {
+        "question": "question",
+        "user": "user",
+        "problemset_question_list": "problemsetQuestionList",
+    }
 
-    def __init__(self, question=None, user=None) -> None:  # noqa: E501
+    def __init__(
+        self, question=None, user=None, problemset_question_list=None
+    ) -> None:  # noqa: E501
         """GraphqlData - a model defined in Swagger"""  # noqa: E501
         self._question = None
         self._user = None
+        self._problemset_question_list = None
         self.discriminator = None
         if question is not None:
             self.question = question
         if user is not None:
             self.user = user
+        if problemset_question_list is not None:
+            self.problemset_question_list = problemset_question_list
 
     @property
     def question(self):
@@ -85,6 +98,27 @@ class GraphqlData(object):
         """
 
         self._user = user
+
+    @property
+    def problemset_question_list(self):
+        """Gets the problemset_question_list of this GraphqlData.  # noqa: E501
+
+
+        :return: The problemset_question_list of this GraphqlData.  # noqa: E501
+        :rtype: GraphqlProblemsetQuestionList
+        """
+        return self._problemset_question_list
+
+    @problemset_question_list.setter
+    def problemset_question_list(self, problemset_question_list):
+        """Sets the problemset_question_list of this GraphqlData.
+
+
+        :param problemset_question_list: The problemset_question_list of this GraphqlData.  # noqa: E501
+        :type: GraphqlProblemsetQuestionList
+        """
+
+        self._problemset_question_list = problemset_question_list
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -29,37 +29,13 @@ class GraphqlQueryVariables(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {"title_slug": "str"}
+    swagger_types = {}
 
-    attribute_map = {"title_slug": "titleSlug"}
+    attribute_map = {}
 
-    def __init__(self, title_slug=None):  # noqa: E501
+    def __init__(self):  # noqa: E501
         """GraphqlQueryVariables - a model defined in Swagger"""  # noqa: E501
-        self._title_slug = None
         self.discriminator = None
-        if title_slug is not None:
-            self.title_slug = title_slug
-
-    @property
-    def title_slug(self):
-        """Gets the title_slug of this GraphqlQueryVariables.  # noqa: E501
-
-
-        :return: The title_slug of this GraphqlQueryVariables.  # noqa: E501
-        :rtype: str
-        """
-        return self._title_slug
-
-    @title_slug.setter
-    def title_slug(self, title_slug):
-        """Sets the title_slug of this GraphqlQueryVariables.
-
-
-        :param title_slug: The title_slug of this GraphqlQueryVariables.  # noqa: E501
-        :type: str
-        """
-
-        self._title_slug = title_slug
 
     def to_dict(self):
         """Returns the model properties as a dict"""

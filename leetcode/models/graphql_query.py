@@ -31,7 +31,7 @@ class GraphqlQuery(object):
     """
     swagger_types = {
         "query": "str",
-        "variables": "GraphqlQueryVariables",
+        "variables": "AnyOfGraphqlQueryVariables",
         "operation_name": "str",
     }
 
@@ -83,7 +83,7 @@ class GraphqlQuery(object):
 
 
         :return: The variables of this GraphqlQuery.  # noqa: E501
-        :rtype: GraphqlQueryVariables
+        :rtype: AnyOfGraphqlQueryVariables
         """
         return self._variables
 
@@ -93,7 +93,7 @@ class GraphqlQuery(object):
 
 
         :param variables: The variables of this GraphqlQuery.  # noqa: E501
-        :type: GraphqlQueryVariables
+        :type: AnyOfGraphqlQueryVariables
         """
         if variables is None:
             raise ValueError(
