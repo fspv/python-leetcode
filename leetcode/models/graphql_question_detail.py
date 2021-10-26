@@ -34,6 +34,7 @@ class GraphqlQuestionDetail(object):
         "question_frontend_id": "str",
         "bound_topic_id": "str",
         "title": "str",
+        "title_slug": "str",
         "frequency": "float",
         "freq_bar": "float",
         "content": "str",
@@ -74,6 +75,7 @@ class GraphqlQuestionDetail(object):
         "question_frontend_id": "questionFrontendId",
         "bound_topic_id": "boundTopicId",
         "title": "title",
+        "title_slug": "titleSlug",
         "frequency": "frequency",
         "freq_bar": "freqBar",
         "content": "content",
@@ -115,6 +117,7 @@ class GraphqlQuestionDetail(object):
         question_frontend_id=None,
         bound_topic_id=None,
         title=None,
+        title_slug=None,
         frequency=None,
         freq_bar=None,
         content=None,
@@ -154,6 +157,7 @@ class GraphqlQuestionDetail(object):
         self._question_frontend_id = None
         self._bound_topic_id = None
         self._title = None
+        self._title_slug = None
         self._frequency = None
         self._freq_bar = None
         self._content = None
@@ -196,6 +200,8 @@ class GraphqlQuestionDetail(object):
             self.bound_topic_id = bound_topic_id
         if title is not None:
             self.title = title
+        if title_slug is not None:
+            self.title_slug = title_slug
         if frequency is not None:
             self.frequency = frequency
         if freq_bar is not None:
@@ -346,6 +352,27 @@ class GraphqlQuestionDetail(object):
         """
 
         self._title = title
+
+    @property
+    def title_slug(self):
+        """Gets the title_slug of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The title_slug of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._title_slug
+
+    @title_slug.setter
+    def title_slug(self, title_slug):
+        """Sets the title_slug of this GraphqlQuestionDetail.
+
+
+        :param title_slug: The title_slug of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._title_slug = title_slug
 
     @property
     def frequency(self):

@@ -19,6 +19,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                     questionFrontendId
                     boundTopicId
                     title
+                    titleSlug
                     frequency
                     freqBar
                     content
@@ -98,6 +99,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
         assert question.question_frontend_id == "1"
         assert question.bound_topic_id is None
         assert question.title == "Two Sum"
+        assert question.title_slug == "two-sum"
         assert question.frequency == 0.0
         assert question.freq_bar > 0
         assert len(question.content) > 10
