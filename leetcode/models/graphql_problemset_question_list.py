@@ -30,40 +30,40 @@ class GraphqlProblemsetQuestionList(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {"total": "int", "questions": "list[GraphqlQuestionDetail]"}
+    swagger_types = {"total_num": "int", "questions": "list[GraphqlQuestionDetail]"}
 
-    attribute_map = {"total": "total", "questions": "questions"}
+    attribute_map = {"total_num": "totalNum", "questions": "questions"}
 
-    def __init__(self, total=None, questions=None) -> None:  # noqa: E501
+    def __init__(self, total_num=None, questions=None) -> None:  # noqa: E501
         """GraphqlProblemsetQuestionList - a model defined in Swagger"""  # noqa: E501
-        self._total = None
+        self._total_num = None
         self._questions = None
         self.discriminator = None
-        if total is not None:
-            self.total = total
+        if total_num is not None:
+            self.total_num = total_num
         if questions is not None:
             self.questions = questions
 
     @property
-    def total(self):
-        """Gets the total of this GraphqlProblemsetQuestionList.  # noqa: E501
+    def total_num(self):
+        """Gets the total_num of this GraphqlProblemsetQuestionList.  # noqa: E501
 
 
-        :return: The total of this GraphqlProblemsetQuestionList.  # noqa: E501
+        :return: The total_num of this GraphqlProblemsetQuestionList.  # noqa: E501
         :rtype: int
         """
-        return self._total
+        return self._total_num
 
-    @total.setter
-    def total(self, total):
-        """Sets the total of this GraphqlProblemsetQuestionList.
+    @total_num.setter
+    def total_num(self, total_num):
+        """Sets the total_num of this GraphqlProblemsetQuestionList.
 
 
-        :param total: The total of this GraphqlProblemsetQuestionList.  # noqa: E501
+        :param total_num: The total_num of this GraphqlProblemsetQuestionList.  # noqa: E501
         :type: int
         """
 
-        self._total = total
+        self._total_num = total_num
 
     @property
     def questions(self):

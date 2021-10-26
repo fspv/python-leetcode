@@ -23,7 +23,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
                 skip: $skip
                 filters: $filters
               ) {
-                total: totalNum
+                totalNum
                 questions: data {
                     questionId
                     questionFrontendId
@@ -111,7 +111,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
 
         assert data
 
-        assert data.problemset_question_list.total > 0
+        assert data.problemset_question_list.total_num > 0
 
         question_list = data.problemset_question_list.questions
         user = data.user
