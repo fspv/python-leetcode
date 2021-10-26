@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **bound_topic_id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **title_slug** | **str** |  | [optional] 
+**category_title** | **str** |  | [optional] 
 **frequency** | **float** |  | [optional] 
 **freq_bar** | **float** |  | [optional] 
 **content** | **str** |  | [optional] 
