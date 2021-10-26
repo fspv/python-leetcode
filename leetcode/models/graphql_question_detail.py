@@ -35,6 +35,7 @@ class GraphqlQuestionDetail(object):
         "bound_topic_id": "str",
         "title": "str",
         "title_slug": "str",
+        "category_title": "str",
         "frequency": "float",
         "freq_bar": "float",
         "content": "str",
@@ -76,6 +77,7 @@ class GraphqlQuestionDetail(object):
         "bound_topic_id": "boundTopicId",
         "title": "title",
         "title_slug": "titleSlug",
+        "category_title": "categoryTitle",
         "frequency": "frequency",
         "freq_bar": "freqBar",
         "content": "content",
@@ -118,6 +120,7 @@ class GraphqlQuestionDetail(object):
         bound_topic_id=None,
         title=None,
         title_slug=None,
+        category_title=None,
         frequency=None,
         freq_bar=None,
         content=None,
@@ -158,6 +161,7 @@ class GraphqlQuestionDetail(object):
         self._bound_topic_id = None
         self._title = None
         self._title_slug = None
+        self._category_title = None
         self._frequency = None
         self._freq_bar = None
         self._content = None
@@ -202,6 +206,8 @@ class GraphqlQuestionDetail(object):
             self.title = title
         if title_slug is not None:
             self.title_slug = title_slug
+        if category_title is not None:
+            self.category_title = category_title
         if frequency is not None:
             self.frequency = frequency
         if freq_bar is not None:
@@ -373,6 +379,27 @@ class GraphqlQuestionDetail(object):
         """
 
         self._title_slug = title_slug
+
+    @property
+    def category_title(self):
+        """Gets the category_title of this GraphqlQuestionDetail.  # noqa: E501
+
+
+        :return: The category_title of this GraphqlQuestionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_title
+
+    @category_title.setter
+    def category_title(self, category_title):
+        """Sets the category_title of this GraphqlQuestionDetail.
+
+
+        :param category_title: The category_title of this GraphqlQuestionDetail.  # noqa: E501
+        :type: str
+        """
+
+        self._category_title = category_title
 
     @property
     def frequency(self):
