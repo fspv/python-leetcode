@@ -96,7 +96,7 @@ graphql_request = leetcode.GraphqlQuery(
           }
         }
     """,
-    variables=leetcode.GraphqlQueryVariables(title_slug="two-sum"),
+    variables=leetcode.GraphqlQueryGetQuestionDetailVariables(title_slug="two-sum"),
     operation_name="getQuestionDetail",
 )
 

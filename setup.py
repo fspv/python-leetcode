@@ -26,7 +26,8 @@ with open("README.md") as readme:
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil", "requests"]
+with open("requirements.txt") as requirements:
+    REQUIRES = [req.replace("\n", "") for req in requirements.readlines()]
 
 setup(
     name=NAME,
