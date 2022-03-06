@@ -89,7 +89,7 @@ class TestGraphqlGetQuestionDetail(test.base.BaseTest):
             variables=GraphqlQueryProblemsetQuestionListVariables(
                 category_slug="algorithms",
                 limit=1,
-                skip=2,
+                skip=3,
                 filters=GraphqlQueryProblemsetQuestionListVariablesFilterInput(
                     tags=["array"],
                     difficulty="MEDIUM",
