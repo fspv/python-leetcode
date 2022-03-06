@@ -27,7 +27,7 @@ with open("README.md") as readme:
 # http://pypi.python.org/pypi/setuptools
 
 with open("requirements.txt") as requirements:
-    REQUIRES = [req.replace('\n', '') for req in requirements.readlines()]
+    REQUIRES = [req.replace("\n", "") for req in requirements.readlines()]
 
 setup(
     name=NAME,
