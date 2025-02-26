@@ -10,7 +10,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.13
+          python-version: 3.12
       - name: Build a binary wheel and a source tarball
         run: python setup.py sdist
       - name: Publish distribution package to Test PyPI
