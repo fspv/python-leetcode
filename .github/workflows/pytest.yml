@@ -23,3 +23,4 @@ jobs:
         run: pytest -vvvv -s
         env:
           LEETCODE_SESSION_ID: ${{ secrets.LEETCODE_SESSION }}
+          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN}}

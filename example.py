@@ -1,11 +1,9 @@
 from __future__ import annotations
 
 import os
-import sys
 from time import sleep
 
 import leetcode
-import leetcode.auth
 
 # Initialize client
 configuration = leetcode.Configuration()
@@ -14,7 +12,7 @@ configuration = leetcode.Configuration()
 # fields which contain corresponding cookies from web browser
 leetcode_session: str = os.environ["LEETCODE_SESSION_ID"]
 
-csrf_token: str = leetcode.auth.get_csrf_cookie(leetcode_session)
+csrf_token = os.environ["LEETCODE_CSRF_TOKEN"]
 
 configuration.api_key["x-csrftoken"] = csrf_token
 configuration.api_key["csrftoken"] = csrf_token

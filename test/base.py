@@ -3,7 +3,6 @@ from typing import Optional
 
 import leetcode.api.default_api
 import leetcode.api_client
-import leetcode.auth
 import leetcode.configuration
 
 
@@ -25,9 +24,9 @@ class BaseTest:
     ) -> None:
         self._api_instance_containter = value
 
-    def setup(self) -> None:
+    def setup_method(self) -> None:
         session_id = os.environ["LEETCODE_SESSION_ID"]
-        csrftoken = leetcode.auth.get_csrf_cookie(session_id)
+        csrftoken = os.environ["LEETCODE_CSRF_TOKEN"]
 
         configuration = leetcode.configuration.Configuration()
 

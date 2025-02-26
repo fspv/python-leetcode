@@ -14,7 +14,7 @@ from __future__ import annotations
 from setuptools import find_packages, setup  # noqa: H301
 
 NAME = "python-leetcode"
-VERSION = "1.2.2"
+VERSION = "1.2.3"
 
 with open("README.md") as readme:
     DESCRIPTION: str = readme.read()
