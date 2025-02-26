@@ -14,7 +14,7 @@ from __future__ import annotations
 from setuptools import find_packages, setup  # noqa: H301
 
 NAME = "python-leetcode"
-VERSION = "1.2.3"
+VERSION = "1.2.4"
 
 with open("README.md") as readme:
     DESCRIPTION: str = readme.read()
@@ -35,7 +35,7 @@ setup(
     description="Leetcode API",
     author="Pavel Safronov",
     author_email="pv.safronov@gmail.com",
-    url="https://github.com/prius/python-leetcode",
+    url="https://github.com/fspv/python-leetcode",
     keywords=["leetcode", "faang", "interview", "api"],
     install_requires=REQUIRES,
     packages=find_packages(),
@@ -50,6 +50,10 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     python_requires=">=3.8",
 )

@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Set up Python 3.9
+      - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.9
+          python-version: 3.13
       - name: Build a binary wheel and a source tarball
         run: python setup.py sdist
       - name: Publish distribution package to Test PyPI
