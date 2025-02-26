@@ -26,9 +26,6 @@ with open("README.md") as readme:
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-with open("requirements.txt") as requirements:
-    REQUIRES = [req.replace("\n", "") for req in requirements.readlines()]
-
 setup(
     name=NAME,
     version=VERSION,
@@ -37,7 +34,14 @@ setup(
     author_email="pv.safronov@gmail.com",
     url="https://github.com/fspv/python-leetcode",
     keywords=["leetcode", "faang", "interview", "api"],
-    install_requires=REQUIRES,
+    install_requires=[
+        "certifi >= 14.05.14",
+        "six >= 1.10",
+        "python_dateutil >= 2.5.3",
+        "setuptools >= 21.0.0",
+        "urllib3 >= 1.15.1",
+        "requests",
+    ],
     packages=find_packages(),
     include_package_data=True,
     long_description=DESCRIPTION,
